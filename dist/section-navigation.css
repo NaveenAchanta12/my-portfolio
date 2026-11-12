@@ -1,0 +1,36 @@
+/* A compact, neutral glass navigation control, matching the portfolio cards. */
+.section-picker{position:relative;flex:none}
+.section-picker>#city-destination[hidden]{display:none!important}
+.city-nav .section-picker-trigger{display:flex;align-items:center;gap:10px;width:192px;min-height:44px;padding:10px 12px;border:1px solid #e9f2fa52;border-radius:12px;background:linear-gradient(135deg,#f5f9fb17,#f5f9fb03),#e8eff31c;box-shadow:inset 0 1px 0 #ffffff20,0 5px 18px #00000014;backdrop-filter:blur(14px) saturate(115%);-webkit-backdrop-filter:blur(14px) saturate(115%);color:#f6f8fa;text-align:left;font:500 12px/1.4 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.01em;transition:border-color .2s,background .2s,box-shadow .2s}
+.section-picker-icon{display:block;flex:none;width:18px;height:18px;color:#dce5eb}
+.section-picker-icon svg,.section-picker-chevron svg,.section-picker-check svg{display:block;width:100%;height:100%}
+.section-picker-current{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.section-picker-chevron{display:block;flex:none;width:15px;height:15px;color:#d6e0e6;transition:transform .25s}
+.city-nav .section-picker-trigger[aria-expanded="true"]{border-color:#f0f5f9a0;background:linear-gradient(135deg,#f5f9fb25,#f5f9fb09),#e8eff32c;box-shadow:inset 0 1px 0 #ffffff32,0 8px 25px #00000024}
+.section-picker-trigger[aria-expanded="true"] .section-picker-chevron{transform:rotate(180deg)}
+.city-nav .section-picker-trigger:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.section-picker-panel{position:fixed;inset:auto;margin:0;padding:0;width:290px;max-width:calc(100vw - 24px);border:1px solid #f0f5f966;border-radius:16px;background:linear-gradient(135deg,#f5f9fb14,#f5f9fb04),#1a242edb;box-shadow:inset 0 1px 0 #ffffff24,0 18px 55px #0005;color:#f2f6f8;backdrop-filter:blur(24px) saturate(115%);-webkit-backdrop-filter:blur(24px) saturate(115%);overflow:hidden;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;opacity:0;transform:translateY(-6px) scale(.985);transform-origin:top right;transition:opacity .2s,transform .25s}
+.section-picker-panel:popover-open{display:flex;flex-direction:column;opacity:1;transform:none}
+@starting-style{.section-picker-panel:popover-open{opacity:0;transform:translateY(-6px) scale(.985)}}
+.section-picker-panel::backdrop{background:transparent}
+.section-picker-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 18px 14px;border-bottom:1px solid #ffffff20;flex:none}
+.section-picker-header p{margin:0;font-size:11px;font-weight:500;letter-spacing:.015em;line-height:1.5;color:#d9e3ea}
+.section-picker-header>span{color:#bac9d4;font-size:10px;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.section-picker-menu{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:7px;scrollbar-width:thin;scrollbar-color:#ffffff40 transparent}
+.city-nav .section-picker-item{display:flex;align-items:center;gap:12px;width:100%;min-height:42px;padding:10px 11px;margin:0;border:1px solid transparent;border-radius:9px;background:transparent;box-shadow:none;color:#dde7ed;text-align:left;font:400 12px/1.45 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.005em;transition:background .15s,border-color .15s}
+.section-picker-number{flex:none;width:20px;color:#98abb9;font-size:9px;letter-spacing:.025em;font-variant-numeric:tabular-nums}
+.section-picker-name{flex:1;min-width:0}
+.section-picker-check{flex:none;width:16px;height:16px;opacity:0;color:#f3f8fa}
+.city-nav .section-picker-item[aria-checked="true"]{background:#f3f8fc13;border-color:#f3f8fc30;color:#fff}
+.section-picker-item[aria-checked="true"] .section-picker-check{opacity:1}
+.section-picker-item[aria-checked="true"] .section-picker-number{color:#e0ebf1}
+.city-nav .section-picker-item.section-picker-group-start{margin-top:6px}
+.city-nav .section-picker-item:focus-visible{outline:2px solid #fff;outline-offset:-2px;background:#f3f8fc18}
+@media(hover:hover) and (pointer:fine){.city-nav .section-picker-trigger:hover{border-color:#f3f8fc99;background:linear-gradient(135deg,#f5f9fb25,#f5f9fb09),#e8eff32c}.city-nav .section-picker-item:hover{background:#f3f8fc13;color:#fff}}
+.reading-mode .section-picker{display:none}
+@media(max-width:760px){.city-nav .section-picker-trigger{width:135px;gap:7px;min-height:42px;padding:9px 10px;font-size:10px;border-radius:10px}.section-picker-icon{width:15px;height:15px}.section-picker-chevron{width:12px;height:12px}.city-nav .section-picker-item{min-height:44px;font-size:12px}.section-picker-header{padding:15px 17px 13px}}
+@media(max-width:370px){.city-nav .section-picker-trigger{width:111px;gap:5px;padding-inline:8px;font-size:9px}.section-picker-icon{width:13px;height:13px}.section-picker-chevron{width:11px;height:11px}}
+@media(orientation:landscape) and (max-height:550px){.section-picker-header{padding-block:12px}.city-nav .section-picker-item{min-height:40px;padding-block:8px}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.section-picker-panel{background:#25323d}.city-nav .section-picker-trigger{background:#34424ee8}}
+@media(prefers-reduced-transparency:reduce){.section-picker-panel{background:#25323d;backdrop-filter:none;-webkit-backdrop-filter:none}.city-nav .section-picker-trigger{background:#34424e;backdrop-filter:none;-webkit-backdrop-filter:none}}
+@media(prefers-reduced-motion:reduce){.section-picker-panel,.city-nav .section-picker-trigger,.section-picker-chevron,.city-nav .section-picker-item{transition:none}.section-picker-panel:popover-open{transform:none}}

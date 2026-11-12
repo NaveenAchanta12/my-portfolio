@@ -1,0 +1,85 @@
+/* Quiet education context and the same translucent reveal cards as Projects. */
+.experience-section .experience-study{position:relative;list-style:none;margin:0;padding:0 0 23px}
+/* Education shares the timeline dot and date pill, without a job-style title. */
+.experience-study:before{content:"";position:absolute;left:-29px;top:51px;width:11px;height:11px;border:2px solid var(--experience-accent);border-radius:50%;background:#242424;box-shadow:0 0 0 4px #00000030;box-sizing:border-box}
+.experience-study .study-note{padding:13px 0 15px;border-top:1px solid #ffffff24;border-bottom:1px solid #ffffff24}
+.experience-study .study-heading{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.experience-study .study-kind{color:#cbd6dd;font-size:10px;font-weight:500;line-height:1.5;letter-spacing:.035em}
+.experience-section .experience-study .study-copy{max-width:50ch;margin:11px 0 0;color:#e4e9ed;font-size:12px;line-height:1.65;font-weight:400}
+.experience-study+.experience-entry:before{top:47px}
+.experience-section .experience-details.project-topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;max-width:440px}
+.experience-section .experience-details .project-topic-trigger{display:grid;grid-template-columns:23px minmax(0,1fr);column-gap:10px;align-content:center;height:72px;padding:12px 27px 12px 12px;border-radius:10px}
+.experience-section .experience-details .project-topic-icon{grid-row:1 / span 2;width:22px;height:22px;margin:0;align-self:center}
+.experience-section .experience-details .project-topic-title{margin:0;min-height:0;font-size:11px;line-height:1.35}
+.experience-section .experience-details .project-topic-hint{grid-column:2;margin-top:4px;min-height:0;font-size:9px;line-height:1.3}
+.experience-section .experience-details .project-topic-arrow{top:12px;right:9px;width:11px;height:11px}
+.experience-section .project-reveal .project-detail-body h3{font-size:14px;margin:20px 0 10px}
+.experience-section .project-reveal .experience-detail-intro,.experience-section .project-reveal .project-detail-body li{font-size:13px;line-height:1.75;color:#f1f5f8}
+.experience-section .project-reveal .project-detail-body li{margin-bottom:13px}
+.experience-section .project-reveal .verified-tools{gap:9px;padding:0}
+.experience-section .project-reveal .verified-tools>span{font-size:12px;line-height:1.5;padding:5px 9px;border:1px solid #ffffff2e;border-radius:6px;background:#ffffff09}
+.experience-section .project-reveal .project-topic-content{padding:20px 23px 23px}
+.city-portal .city-stop.ai-practice-section{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;top:24%}
+.city-portal[data-station="ai"] .city-visual:after{opacity:.5}
+.ai-practice-section .project-layout{grid-template-columns:minmax(0,.95fr) minmax(0,1.2fr)}
+.ai-practice-section.project-refined h2{max-width:12ch}
+.ai-practice-section .project-reveal h2{max-width:none}
+.ai-practice-section .ai-practice-signature,.city-portal .ai-practice-section .ai-practice-signature{margin:21px 0 0;padding-top:17px;border-top:1px solid #ffffff26;color:#d4dee5;font-size:11px;letter-spacing:.015em;line-height:1.7;max-width:39ch}
+.ai-practice-section .ai-footnote,.city-portal .ai-practice-section .ai-footnote{max-width:none;margin:30px 0 0;font-size:10px;line-height:1.6;color:#c1ccd5}
+.ai-practice-section .project-detail-body h3{font-size:14px}
+.ai-practice-section .project-detail-body ul,.ai-practice-section .project-detail-body ol{margin:15px 0;padding-left:20px}
+.ai-practice-section .project-detail-body li{margin-bottom:11px}
+.ai-practice-section .project-detail-body .verified-tools{gap:7px;margin:18px 0}
+.ai-practice-section .project-detail-body .verified-tools>span{padding:4px 8px;border:1px solid #ffffff2e;border-radius:6px;background:#ffffff09;font-size:11px}
+.ai-practice-section .project-detail-body .ai-limitation{font-size:12px;line-height:1.7;color:#d8e3eb;border-top:1px solid #ffffff2b;padding-top:15px;margin-top:20px}
+.ai-practice-section .project-subheading{font-size:14px;margin:28px 0 13px}
+.ai-practice-section .project-topic-content>.project-detail-body+.project-subheading{padding-top:23px;border-top:1px solid #ffffff35}
+.reading-view .experience-study .study-copy{font-size:14px;max-width:620px}
+.reading-view .experience-study .study-kind{font-size:11px}
+.reading-view .ai-practice-section{padding-block:75px;max-width:1140px}
+@media(min-width:1500px){.experience-section .experience-study .study-copy{font-size:13px}.experience-study:before{top:52px}}
+@media(max-width:760px){
+ .experience-study:before{left:-24px;width:10px;height:10px}
+ .experience-study .study-heading{gap:9px}
+ .experience-section .experience-details .project-topic-trigger{height:76px;grid-template-columns:20px minmax(0,1fr);column-gap:8px;padding-left:10px;padding-right:22px}
+ .experience-section .experience-details .project-topic-title{font-size:11px}
+ .experience-section .experience-details .project-topic-icon{width:20px;height:20px}
+}
+@media(max-width:700px){
+ .city-portal .city-stop.ai-practice-section{top:115px}
+ .ai-practice-section.project-refined h2{max-width:15ch}
+ .ai-practice-section .project-reveal h2{max-width:none}
+ .ai-practice-section .ai-practice-signature,.city-portal .ai-practice-section .ai-practice-signature{margin-top:17px;padding-top:14px;max-width:none}
+ .ai-practice-section .ai-footnote,.city-portal .ai-practice-section .ai-footnote{margin-top:23px}
+ .reading-view .ai-practice-section{padding-block:55px}
+}
+@media(max-width:370px){.experience-section .experience-details.project-topics{gap:7px}.experience-section .experience-details .project-topic-trigger{padding:10px 22px 10px 9px;column-gap:6px}.experience-study .study-kind{font-size:9px}}
+@media(orientation:landscape) and (max-height:550px){.city-portal .city-stop.ai-practice-section{top:82px}.ai-practice-section .ai-footnote{margin-top:20px}}
+/* These source headings carry version/scope information, so remain visible. */
+.ai-practice-section .project-topic-content>.project-subheading:first-child{position:static;width:auto;height:auto;margin:0 0 13px;padding:0;overflow:visible;clip:auto;white-space:normal}
+/* Keep longer role-card titles on natural word boundaries on narrow phones. */
+@media(max-width:370px){
+ .experience-section .project-reveal-header{row-gap:7px}
+ .experience-section .project-reveal-icon{grid-row:1}
+ .experience-section .project-reveal-context{grid-row:1}
+ .experience-section .project-reveal h2{grid-column:1 / -1;grid-row:2}
+}
+
+/* Equal breathing room on both sides of the master's note. */
+.experience-section .experience-study{padding:0}
+.experience-study .study-note{padding-block:18px}
+#experience .experience-entry:has(+ .experience-study) .employment,
+.city-portal .experience-entry:has(+ .experience-study) .employment{padding-bottom:32px}
+#experience .experience-study+.experience-entry .employment,
+.city-portal .experience-study+.experience-entry .employment{padding-top:32px;border-top:0}
+.experience-study:before{top:23px}
+/* Let mobile role cards grow with wrapped labels instead of compressing the
+   title and hint into a fixed height. Keep two columns only when both fit. */
+@media(max-width:760px),(orientation:landscape) and (max-height:550px){
+ .experience-section .experience-details.project-topics{grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));align-items:stretch}
+ .experience-section .project-refined .experience-details.project-topics .project-topic-trigger{height:auto;min-height:76px;grid-template-rows:max-content max-content;row-gap:4px;padding:12px 27px 12px 12px}
+ .experience-section .project-refined .experience-details.project-topics .project-topic-title,
+ .experience-section .project-refined .experience-details.project-topics .project-topic-hint{min-width:0;min-height:auto;margin:0;overflow-wrap:anywhere}
+ .experience-section .project-refined .experience-details.project-topics .project-topic-title{grid-column:2;grid-row:1}
+ .experience-section .project-refined .experience-details.project-topics .project-topic-hint{grid-column:2;grid-row:2}
+}

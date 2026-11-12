@@ -1,0 +1,71 @@
+/* Landing art direction only. Laptop surfaces, geometry, scene timing, City,
+   Reading and the startup loader intentionally retain their existing styles. */
+.intro .stage,
+.intro .stage > .ambient {
+  background: #000 !important;
+}
+
+.intro .ambient::before,
+.intro .ambient::after,
+.intro .hero-artboard::before {
+  content: none;
+}
+
+/* Keep the original live type metrics and scroll fade. Separate inline runs
+   let the surface treatment win over app.js's inherited, inline text color. */
+.intro .hero-artboard .hero-name {
+  background: none;
+  text-shadow: none;
+}
+
+.intro .hero-artboard .hero-name::after {
+  content: none;
+  animation: none;
+}
+
+.intro .hero-artboard .hero-name .hero-name__line {
+  background: linear-gradient(180deg,
+    rgba(172, 189, 201, .48) 0%,
+    rgba(124, 145, 161, .34) 48%,
+    rgba(92, 112, 128, .24) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: .45px rgba(180, 205, 220, .14);
+}
+
+/* A quiet, icy reflection is clipped to exactly ANTA. No flashing, sweeping
+   overlay, added image, or new animation can interfere with the laptop. */
+.intro .hero-artboard .hero-name .hero-name__light {
+  background: linear-gradient(112deg,
+    rgba(126, 155, 174, .42) 0%,
+    rgba(177, 203, 220, .66) 29%,
+    rgba(223, 239, 248, .9) 43%,
+    rgba(246, 251, 255, .96) 47%,
+    rgba(155, 192, 216, .7) 54%,
+    rgba(116, 148, 170, .48) 72%,
+    rgba(106, 134, 155, .32) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: .45px rgba(204, 230, 246, .2);
+  text-shadow: 0 0 .16em rgba(151, 196, 229, .08);
+}
+
+/* The existing reduced-motion path skips the entire intro. Keep a legible
+   fallback if the decorative name is ever shown without that controller. */
+@media (prefers-reduced-motion: reduce) {
+  .intro .hero-artboard .hero-name .hero-name__light {
+    text-shadow: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .intro .hero-artboard .hero-name .hero-name__line,
+  .intro .hero-artboard .hero-name .hero-name__light {
+    background: none;
+    -webkit-text-fill-color: CanvasText;
+    -webkit-text-stroke: 0;
+    text-shadow: none;
+  }
+}

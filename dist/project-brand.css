@@ -1,0 +1,6 @@
+/* User-provided project marks; original pixels and proportions preserved. */
+.provided-project-logo{display:block;object-fit:contain;object-position:left center;max-width:100%;margin:10px 0 16px}
+.city-stop .codetrail-logo,.verified-section .codetrail-logo{width:182px;height:auto}
+.city-stop .lumicare-logo,.verified-section .lumicare-logo{width:230px;height:auto}
+.city-stop .mywishlist-logo,.verified-section .mywishlist-logo{width:52px;height:auto;border-radius:12px}
+@media(max-width:760px), (max-height:550px){.city-stop .codetrail-logo{width:145px}.city-stop .lumicare-logo{width:190px}.city-stop .mywishlist-logo{width:44px}.city-stop .provided-project-logo{margin:4px 0 10px}}
