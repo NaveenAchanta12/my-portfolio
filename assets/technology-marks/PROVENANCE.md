@@ -1,0 +1,5 @@
+Devicon SVGs downloaded from the official devicons/devicon GitHub master branch on 2026-11-09. MIT license retained in LICENSE; trademarks belong to respective owners. These indicate technologies used, not endorsement.
+Source: https://github.com/devicons/devicon
+Files: icons/dot-net/dot-net-original.svg, icons/csharp/csharp-original.svg, icons/react/react-original.svg, icons/angular/angular-original.svg, icons/typescript/typescript-original.svg, icons/azure/azure-original.svg, icons/postgresql/postgresql-original.svg, icons/nodejs/nodejs-original.svg.
+
+Additional official Devicon SVGs downloaded 2026-11-10 for the engineering toolkit: icons/java/java-original.svg, icons/javascript/javascript-original.svg, icons/git/git-original.svg, icons/terraform/terraform-original.svg, icons/mongodb/mongodb-original.svg, icons/html5/html5-original.svg, icons/css3/css3-original.svg, icons/bootstrap/bootstrap-original.svg, icons/jquery/jquery-original.svg, icons/oracle/oracle-original.svg, icons/microsoftsqlserver/microsoftsqlserver-original.svg. Original purpose pictograms in showcase-layout.js are not presented as brand logos.
