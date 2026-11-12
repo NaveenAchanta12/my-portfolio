@@ -1,0 +1,82 @@
+{
+  "runtime": "All files hosted locally; no third-party network requests.",
+  "assets": [
+    {
+      "file": "beige_wall_001_diff_1k.jpg",
+      "bytes": 33074,
+      "sha256": "72104704d0b9bd3713c5f6238971252b63eccf6e61263059c674caa8f3d0fa6d",
+      "source": "https://polyhaven.com/a/beige_wall_001",
+      "authors": [
+        "Dimitrios Savva",
+        "Rico Cilliers"
+      ],
+      "license": "CC0 1.0",
+      "licenseURL": "https://polyhaven.com/license",
+      "modifications": "Unmodified1K source map"
+    },
+    {
+      "file": "beige_wall_001_nor_gl_1k.jpg",
+      "bytes": 153434,
+      "sha256": "cec747be50f91da0693986080b6f59ef868d53cb2ab7d577982165ece63ed75e",
+      "source": "https://polyhaven.com/a/beige_wall_001",
+      "authors": [
+        "Dimitrios Savva",
+        "Rico Cilliers"
+      ],
+      "license": "CC0 1.0",
+      "licenseURL": "https://polyhaven.com/license",
+      "modifications": "Unmodified1K source map"
+    },
+    {
+      "file": "beige_wall_001_rough_1k.jpg",
+      "bytes": 151256,
+      "sha256": "fc8328f47f4d2d82d5311a75bcb5c8cd8979d171a0ee097ad9e44ca9c5a00d60",
+      "source": "https://polyhaven.com/a/beige_wall_001",
+      "authors": [
+        "Dimitrios Savva",
+        "Rico Cilliers"
+      ],
+      "license": "CC0 1.0",
+      "licenseURL": "https://polyhaven.com/license",
+      "modifications": "Unmodified1K source map"
+    },
+    {
+      "file": "island_tree_01_lod0.glb",
+      "bytes": 4861584,
+      "sha256": "d81cbfdde657eca087fe846433eb4aa628bfdc2cca2ac5e292b84999e699aaaf",
+      "source": "https://polyhaven.com/a/island_tree_01",
+      "authors": [
+        "Rico Cilliers",
+        "Rob Tuytel"
+      ],
+      "license": "CC0 1.0",
+      "licenseURL": "https://polyhaven.com/license",
+      "modifications": "Local mesh reduction, texture recompression and KHR_mesh_quantization"
+    },
+    {
+      "file": "island_tree_01_lod1.glb",
+      "bytes": 2758524,
+      "sha256": "1fbeb8522a92d0638b6426f9404ea27e7df313988e92dfd0b2e83c1b698eca83",
+      "source": "https://polyhaven.com/a/island_tree_01",
+      "authors": [
+        "Rico Cilliers",
+        "Rob Tuytel"
+      ],
+      "license": "CC0 1.0",
+      "licenseURL": "https://polyhaven.com/license",
+      "modifications": "Local mesh reduction, texture recompression and KHR_mesh_quantization"
+    },
+    {
+      "file": "street_lamp_01_lod0.glb",
+      "bytes": 535708,
+      "sha256": "f3de52d4a9cc48b39787db557c6019182f3d1dd0e0384b78f8736125d324b48e",
+      "source": "https://polyhaven.com/a/street_lamp_01",
+      "authors": [
+        "Josh Dean"
+      ],
+      "license": "CC0 1.0",
+      "licenseURL": "https://polyhaven.com/license",
+      "modifications": "Local mesh reduction, texture recompression and KHR_mesh_quantization"
+    }
+  ]
+}
