@@ -1,0 +1,99 @@
+/* Compact glass cards. Details reveal in the top layer without reflowing the page. */
+.project-refined{--project-accent:#f3f3f3;--project-muted:#d7dce0;--project-rule:#ffffff32;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.project-refined .project-layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.2fr);gap:clamp(28px,4.5vw,68px);align-items:center}
+.project-refined .project-overview,.project-refined .project-topics{min-width:0}
+.project-refined .project-overview{padding-top:8px}
+.project-refined h2{font-size:clamp(32px,3.4vw,48px);font-weight:600;letter-spacing:-.045em;line-height:1.08;text-transform:none;color:#fff;margin:0 0 14px;overflow-wrap:anywhere}
+.project-refined .project-meta,.city-portal .project-refined .project-meta{display:block;max-width:44ch;font-size:11px;line-height:1.65;letter-spacing:.01em;text-transform:none;color:#cbd3da;margin:0 0 28px}
+.project-refined .project-about-label,.city-portal .project-refined .project-about-label{font-family:inherit;font-size:11px;font-weight:600;letter-spacing:.025em;text-transform:none;line-height:1.5;color:#d3dce3;margin:0 0 8px}
+.project-refined .project-lede,.city-portal .project-refined .project-lede{font-family:inherit;font-size:15px;font-weight:400;letter-spacing:-.012em;line-height:1.65;color:#f1f4f6;max-width:43ch;margin:0;text-wrap:pretty}
+.project-refined .project-topics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:stretch}
+.project-refined .project-topic{min-width:0;position:relative}
+.project-refined .project-topic-trigger{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;box-sizing:border-box;width:100%;height:142px;min-height:0;padding:18px 15px 16px;overflow:hidden;text-align:left;font:inherit;color:#f5f8fa;border:1px solid #e9f2fa52;border-radius:13px;background:linear-gradient(135deg,#f5f9fb17,#f5f9fb03),#e8eff31c;box-shadow:inset 0 1px 0 #ffffff20,0 8px 22px #0000000d;backdrop-filter:blur(14px) saturate(115%);-webkit-backdrop-filter:blur(14px) saturate(115%);text-shadow:0 1px 3px #0005;transition:transform .38s cubic-bezier(.2,.7,.2,1),border-color .3s,background .3s,box-shadow .38s;-webkit-tap-highlight-color:transparent}
+.project-refined .project-topic-trigger:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 20%,#ffffff12 48%,transparent 72%);transform:translateX(-110%);transition:transform .75s cubic-bezier(.2,.7,.2,1)}
+.project-refined .project-topic-icon{display:block;width:27px;height:27px;margin-bottom:auto;color:#edf4f9;transition:transform .38s}
+.project-refined .project-topic-icon svg{display:block;width:100%;height:100%}
+.project-refined .project-topic-title{display:block;font-size:13px;font-weight:600;letter-spacing:-.025em;line-height:1.25;color:#fff;margin-top:19px}
+.project-refined .project-topic-hint,.city-portal .project-refined .project-topic-hint{display:block;font-size:9px;font-weight:400;letter-spacing:0;line-height:1.5;color:#d3dee6;margin-top:5px}
+.project-refined .project-topic-arrow{position:absolute;right:12px;top:14px;display:block;width:15px;height:15px;opacity:.65;transition:transform .38s,opacity .3s}
+.project-refined .project-topic-arrow svg{display:block;width:100%;height:100%}
+@media(hover:hover) and (pointer:fine){.project-refined .project-topic-trigger:hover{transform:translateY(-5px);border-color:#f5faff9c;background:linear-gradient(135deg,#f5f9fb25,#f5f9fb09),#e8eff32c;box-shadow:inset 0 1px 0 #ffffff32,0 15px 30px #00000025}.project-refined .project-topic-trigger:hover:before{transform:translateX(110%)}.project-refined .project-topic-trigger:hover .project-topic-icon{transform:translateY(-2px) rotate(-4deg)}.project-refined .project-topic-trigger:hover .project-topic-arrow{transform:translateX(3px);opacity:1}}
+.project-refined .project-topic-trigger:active{transform:translateY(-1px) scale(.985)}
+.project-refined .project-topic-trigger:focus-visible{outline:2px solid #fff;outline-offset:4px;border-color:#fff}
+.project-refined .project-actions,.city-portal .project-refined .project-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:23px 0 0;padding-top:20px;border-top:1px solid #ffffff26}
+.project-refined a.project-action,.project-refined a.project-action.primary{display:inline-flex;justify-content:center;gap:8px;min-height:46px;box-sizing:border-box;padding:10px 14px;border:1px solid #ffffff52;border-radius:8px;background:#ffffff07!important;color:#f6f7f8;box-shadow:inset 0 1px 0 #ffffff0a;text-shadow:none;font-family:inherit;font-size:11px;font-weight:550;letter-spacing:0;line-height:1.4;transition:background .2s,border-color .2s,transform .2s}
+.project-refined a.project-action.primary{background:#f0f2f4!important;border-color:#f0f2f4;color:#111820}
+.project-refined a.project-action:hover{background:#ffffff20!important;border-color:#ffffffa3;color:#fff;transform:translateY(-1px)}
+.project-refined a.project-action.primary:hover{background:#fff!important;border-color:#fff;color:#111820}
+.project-refined .project-action:after{margin-left:4px;width:7px;height:7px}
+.project-refined .project-action-unavailable,.project-refined .link-pending{font-family:inherit;font-size:10px;line-height:1.6;color:#cbd4dc;flex-basis:100%;max-width:none;margin:3px 0 0}
+.project-refined a.project-action:focus-visible{outline:2px solid #fff;outline-offset:4px;border-radius:8px}
+/* A real modal provides native focus containment, Escape and focus return. */
+html:has(.project-refined){scrollbar-gutter:stable}
+body:has(dialog.project-reveal[open]){overflow:hidden}
+.project-refined dialog.project-reveal{position:fixed;inset:0;width:min(540px,calc(100vw - 48px));max-width:none;height:fit-content;max-height:min(66dvh,480px);margin:auto;padding:0;border:1px solid #e9f2fa66;border-radius:16px;background:linear-gradient(135deg,#f5f9fb17,#f5f9fb03),#e8eff31c;color:#f0f4f8;box-shadow:inset 0 1px 0 #ffffff2b,inset 0 -1px 0 #ffffff0d,0 18px 65px #0003;backdrop-filter:blur(20px) saturate(115%);-webkit-backdrop-filter:blur(20px) saturate(115%);text-shadow:0 1px 4px #0004;overflow:hidden;opacity:0;transform:perspective(1400px) translateY(20px) rotateX(7deg) rotateY(-7deg) scale(.94);transform-origin:50% 65%;transition:transform .52s cubic-bezier(.2,.75,.2,1),opacity .38s ease}
+.project-refined dialog.project-reveal[open]{display:flex;flex-direction:column}
+.project-refined dialog.project-reveal.is-revealed{opacity:1;transform:perspective(1400px) translateY(0) rotateX(0) rotateY(0) scale(1)}
+.project-refined dialog.project-reveal::backdrop{background:#060c1238;backdrop-filter:blur(1.5px);-webkit-backdrop-filter:blur(1.5px);opacity:0;transition:opacity .38s ease}
+.project-refined dialog.project-reveal.is-revealed::backdrop{opacity:1}
+.project-refined .project-reveal-header{position:relative;display:grid;grid-template-columns:34px minmax(0,1fr);column-gap:12px;align-items:center;flex:none;padding:22px 66px 19px 24px;border-bottom:1px solid #ffffff1c;background:none}
+.project-refined .project-reveal-icon{grid-column:1;grid-row:1 / span 2;display:grid;place-items:center;width:34px;height:34px;color:#f4f8fb}
+.project-refined .project-reveal-icon svg{display:block;width:26px;height:26px}
+.project-refined .project-reveal-context,.city-portal .project-refined .project-reveal-context{font-family:inherit;grid-column:2;font-size:10px;font-weight:450;letter-spacing:.025em;line-height:1.45;text-transform:none;color:#e1e8ed;margin:0 0 3px}
+.project-refined .project-reveal h2{grid-column:2;font-family:inherit;font-size:23px;font-weight:550;letter-spacing:-.035em;line-height:1.2;color:#fff;margin:0;text-transform:none}
+.project-refined .project-reveal-close{position:absolute;right:13px;top:19px;display:grid;place-items:center;width:44px;height:44px;min-width:44px;padding:10px;border:1px solid #ffffff24;border-radius:12px;background:#ffffff09;color:#edf5fb;transition:background .2s,transform .2s}
+.project-refined .project-reveal-close svg{display:block;width:20px;height:20px}
+.project-refined .project-reveal-close:hover{background:#ffffff19;transform:rotate(4deg)}
+.project-refined .project-reveal-close:focus-visible{outline:2px solid #e4f1fa;outline-offset:3px}
+.project-refined .project-topic-content{min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;scrollbar-width:thin;scrollbar-color:#a9bac855 transparent;padding:20px 23px 23px;overflow-wrap:anywhere;outline-offset:-3px}
+.project-refined .project-topic-content:focus-visible{outline:1px solid #e4f1fa80}
+.project-refined .project-subheading{font-family:inherit;font-size:12px;font-weight:550;line-height:1.5;letter-spacing:-.01em;text-transform:none;color:#f5f8fa;margin:23px 0 11px}
+.project-refined .project-topic-content>.project-subheading:first-child{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.project-refined .project-topic-content>.project-subheading:first-child+.project-detail-body> :first-child{margin-top:0}
+.project-refined .project-detail-body h3{font-family:inherit;font-size:12px;font-weight:550;line-height:1.5;letter-spacing:-.01em;text-transform:none;color:#f5f8fa;margin:22px 0 10px}
+.project-refined .project-detail-body{max-width:none;padding:0}
+.project-refined .project-detail-body p,.project-refined .project-detail-body li,.project-refined .project-about-continuation,.city-portal .project-refined .project-about-continuation{font-family:inherit;font-size:13px;font-weight:400;letter-spacing:-.006em;line-height:1.7;color:#f1f5f8}
+.project-refined .project-detail-body p,.project-refined .project-about-continuation{margin:0 0 15px}
+.project-refined .project-detail-body ul,.project-refined .project-detail-body ol{padding-left:18px;margin:0}
+.project-refined .project-detail-body .project-responsibilities{padding-left:0}
+.project-refined .project-detail-body .project-responsibilities li{padding-left:15px;margin:0;padding-bottom:16px}
+.project-refined .project-detail-body .project-responsibilities li:before{content:"";width:4px;height:4px;border-radius:50%;background:#edf6fc9c;top:.8em;left:0}
+.project-refined .project-detail-body .project-tags{padding:0;gap:7px}
+.project-refined .project-detail-body .project-tags li{font-size:12px;line-height:1.4;padding:6px 9px;border:1px solid #ffffff2e;border-radius:6px;background:#ffffff09}
+.project-refined .project-detail-body .project-tags li:after{display:none}
+.project-refined .project-detail-body .verified-tools{font-size:13px;gap:10px 14px}
+.project-refined .project-scope-note{font-size:12px!important;line-height:1.75!important;color:#c0cdda!important;margin:20px 0 0!important}
+.city-portal .city-stop.project-refined{left:7%;right:7%;top:22%;bottom:88px;width:auto;max-height:none;padding:8px 4px;transform:none!important;overflow:auto;scrollbar-color:#ffffff55 transparent;text-shadow:0 1px 3px #000a,0 0 14px #0005}
+.city-portal:is([data-station="codetrail"],[data-station="golivescore"],[data-station="lumicare"],[data-station="wishlist"],[data-station="jobhunt"]) .city-visual:after{opacity:.5}
+.reading-view .project-refined{max-width:1140px;padding-block:75px}
+.reading-view .project-refined .project-lede{font-size:16px}
+.reading-view .project-refined .project-topic-trigger{background:linear-gradient(135deg,#ffffff12,#ffffff04);backdrop-filter:none;-webkit-backdrop-filter:none}
+/* GitHub's unchanged filled Primer mark. */
+a .github-mark{display:block;width:22px;height:22px;flex:none;fill:currentColor;stroke:none;opacity:1;overflow:visible}
+.contact-links .contact-tile[data-contact="github"]>.github-mark{width:28px;height:28px;opacity:1;stroke:none;fill:currentColor}
+@media(min-width:1500px){.project-refined .project-topics{gap:16px}.project-refined .project-topic-trigger{height:150px;padding:20px 18px}.project-refined .project-topic-title{font-size:14px}.project-refined .project-topic-hint{font-size:10px}}
+@media(max-width:1000px){.project-refined .project-layout{grid-template-columns:minmax(0,.95fr) minmax(0,1.2fr);gap:28px}.project-refined h2{font-size:34px}.project-refined .project-topics{gap:9px}.project-refined .project-topic-trigger{height:134px;padding:16px 12px}.project-refined .project-topic-title{font-size:12px}.project-refined .project-topic-hint{font-size:9px}.project-refined .project-topic-icon{width:25px;height:25px}}
+@media(max-width:700px){.city-portal .city-stop.project-refined{left:7%;right:7%;top:103px;bottom:110px;padding:8px 4px;max-height:none}.project-refined .project-layout{display:flex;flex-direction:column;gap:25px}.project-refined .project-overview{padding:0;width:100%}.project-refined .project-topics{width:100%;gap:9px}.project-refined h2{font-size:32px;margin-bottom:10px}.project-refined .project-meta,.city-portal .project-refined .project-meta{font-size:10px;margin-bottom:21px;max-width:45ch}.project-refined .project-lede,.city-portal .project-refined .project-lede{font-size:14px;line-height:1.65;max-width:none}.project-refined .project-topic-trigger{height:128px;padding:14px 11px}.project-refined .project-topic-title{font-size:12px;line-height:1.25;min-height:2.5em;margin-top:14px}.project-refined .project-topic-hint{font-size:8px;line-height:1.4;min-height:2.8em}.project-refined .project-topic-arrow{right:9px;top:12px;width:12px;height:12px}.project-refined .project-actions,.city-portal .project-refined .project-actions{margin-top:20px;padding-top:17px;gap:9px}.project-refined a.project-action,.project-refined a.project-action.primary{padding:10px 12px;min-height:46px;font-size:11px}.project-refined dialog.project-reveal{width:calc(100vw - 44px);max-height:min(68dvh,520px);border-radius:15px}.project-refined .project-reveal-header{padding:19px 60px 17px 19px;grid-template-columns:28px minmax(0,1fr);column-gap:10px}.project-refined .project-reveal h2{font-size:21px}.project-refined .project-reveal-close{top:15px;right:10px}.project-refined .project-topic-content{padding:18px 18px 21px}.project-refined .project-detail-body p,.project-refined .project-detail-body li,.project-refined .project-about-continuation,.city-portal .project-refined .project-about-continuation{font-size:13px}.reading-view .project-refined{padding-block:55px}.contact-links .contact-tile[data-contact="github"]>.github-mark{width:25px;height:25px}}
+@media(max-width:360px){.project-refined h2{font-size:29px}.project-refined .project-topics{gap:7px}.project-refined .project-topic-trigger{height:125px;padding-inline:9px}.project-refined .project-topic-title{font-size:11px}.project-refined .project-topic-hint{font-size:8px}.city-portal .city-stop.project-refined{left:5%;right:5%}}
+@media(orientation:landscape) and (max-height:550px){.city-portal .city-stop.project-refined{top:82px;bottom:70px}.project-refined h2{font-size:28px}.project-refined .project-meta,.city-portal .project-refined .project-meta{margin-bottom:18px}.project-refined .project-topic-trigger{height:122px}.project-refined dialog.project-reveal{max-height:84dvh;width:min(540px,calc(100vw - 44px))}.project-refined .project-reveal-header{padding-block:14px}.project-refined .project-reveal-context{margin-bottom:4px}.project-refined .project-reveal h2{font-size:21px}.project-refined .project-reveal-close{top:12px}.project-refined .project-topic-content{padding-block:17px}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.project-refined .project-topic-trigger{background:#25323de8}.project-refined dialog.project-reveal{background:#202d37}}
+@media(prefers-reduced-transparency:reduce){.project-refined .project-topic-trigger,.project-refined dialog.project-reveal{background:#27343e;backdrop-filter:none;-webkit-backdrop-filter:none}.project-refined dialog.project-reveal::backdrop{background:#060c12df;backdrop-filter:none;-webkit-backdrop-filter:none}}
+@media(prefers-reduced-motion:reduce){.project-refined .project-topic-trigger,.project-refined .project-topic-trigger:before,.project-refined .project-topic-icon,.project-refined .project-topic-arrow,.project-refined a.project-action,.project-refined .project-reveal-close,.project-refined dialog.project-reveal,.project-refined dialog.project-reveal::backdrop{transition:none;animation:none}.project-refined .project-topic-trigger:hover,.project-refined .project-topic-trigger:active,.project-refined .project-topic-trigger:hover .project-topic-icon,.project-refined .project-topic-trigger:hover .project-topic-arrow,.project-refined .project-reveal-close:hover{transform:none}.project-refined .project-topic-trigger:before{display:none}.project-refined dialog.project-reveal{transform:none}}
+
+/* Selected chapters keep their full-size type in one right-hand column.
+   The glass cards remain below the overview rather than beside it. */
+.project-refined.project-stack-right .project-layout{display:flex;flex-direction:column;align-items:stretch;gap:24px;max-width:620px;margin-left:auto}
+.project-refined.project-stack-right .project-overview,.project-refined.project-stack-right .project-topics{width:100%}
+.project-refined.project-stack-right .project-overview{padding-top:0}
+.project-refined.project-stack-right .project-meta{margin-bottom:24px}
+.city-portal .city-stop.project-refined.project-stack-right{left:auto;right:7%;width:min(620px,49vw)}
+@media(max-width:700px){
+ .city-portal .city-stop.project-refined.project-stack-right{left:7%;right:7%;width:auto}
+ .project-refined.project-stack-right .project-layout{max-width:none;margin-left:0;gap:25px}
+}
+@media(max-width:360px){.city-portal .city-stop.project-refined.project-stack-right{left:5%;right:5%}}
+
+/* A pointer close keeps focus available without inheriting Safari's blue ring.
+   Keyboard close keeps an explicit ring, including Escape and Enter/Space. */
+.project-refined .project-topic-trigger.project-pointer-focus:focus{outline:none;border-color:#e9f2fa52}
+.project-refined .project-topic-trigger.project-keyboard-focus:focus{outline:2px solid #fff;outline-offset:4px;border-color:#fff}

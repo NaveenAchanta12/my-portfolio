@@ -1,0 +1,96 @@
+/* Borderless, neutral employment timeline over the visible city. */
+.experience-section{
+  --experience-accent:#f0f0f0;
+  --experience-ink:#fafafa;
+  --experience-muted:#dedede;
+  --experience-line:#ffffff40;
+}
+.city-portal .city-stop.experience-section{
+  right:5.5%;width:min(650px,49vw);padding:30px 32px;
+  max-height:calc(100svh - 190px);
+  background:transparent!important;
+  border:0!important;border-radius:0!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  text-shadow:0 1px 3px #000c,0 0 14px #0008;scrollbar-color:#ffffff55 transparent;
+}
+.city-portal[data-station="experience"] .city-visual:after{opacity:.44}
+.experience-section h2{color:var(--experience-ink);font-size:clamp(32px,3.4vw,48px);line-height:1.08;letter-spacing:-.045em;margin:16px 0 11px}
+.city-portal .experience-section .city-kicker{color:var(--experience-accent)}
+.experience-section p.experience-lede{color:var(--experience-muted);font-size:14px;line-height:1.55;margin:0 0 27px;max-width:43em}
+.experience-timeline{list-style:none;margin:0;padding:0 0 0 29px;position:relative}
+.experience-timeline:before{content:"";position:absolute;left:5px;top:4px;bottom:10px;width:1px;background:linear-gradient(var(--experience-line),#ffffff80 45%,var(--experience-line))}
+.experience-section .experience-entry{position:relative;list-style:none;margin:0;padding:0}
+.experience-entry:before{content:"";position:absolute;left:-29px;top:47px;width:11px;height:11px;border:2px solid var(--experience-accent);border-radius:50%;background:#242424;box-shadow:0 0 0 4px #00000030;box-sizing:border-box}
+.experience-section .employment{margin:0;padding:0 0 24px}
+.experience-entry+.experience-entry .employment{border-top:1px solid var(--experience-line);padding-top:23px}
+.experience-entry+.experience-entry:before{top:70px}
+.experience-entry:last-child .employment{padding-bottom:0}
+.experience-date{display:inline-flex;align-items:center;flex-wrap:wrap;gap:4px;max-width:100%;padding:5px 9px;border-radius:7px;border:1px solid #ffffff4d;background:#00000026;color:#f5f5f5;font-size:11px;font-weight:650;line-height:1.2;letter-spacing:0}
+.experience-section .employment h3{margin:11px 0 4px;font-size:24px;font-weight:600;line-height:1.15;letter-spacing:-.025em;color:var(--experience-ink)}
+.city-portal .experience-section p.experience-role,.experience-section p.experience-role{margin:0 0 12px;color:#e2e2e2;font-size:13px;font-weight:500;line-height:1.5}
+.city-portal .experience-section p.experience-summary,.experience-section p.experience-summary{margin:0 0 14px;color:#f0f0f0;font-size:13px;line-height:1.65}
+.experience-section .experience-stack{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0 0 11px}
+.city-portal .experience-section .experience-stack li,.experience-section .experience-stack li{padding:4px 10px;margin:0;border:1px solid #ffffff50;border-radius:100px;background:#00000020;color:#f0f0f0;font-size:10px;font-weight:500;line-height:1.5;white-space:nowrap}
+.experience-details{display:flex;flex-wrap:wrap;align-items:flex-start;gap:4px 18px}
+.experience-section .experience-details .city-detail{margin:0;max-width:100%;min-width:0}
+.experience-section .experience-details .city-detail[open]{flex-basis:100%}
+.experience-section .experience-details summary{display:list-item;min-height:36px;padding:8px 0;font-size:11px;line-height:1.6;font-weight:500;color:#e6e6e6;cursor:pointer}
+.experience-section .experience-details summary::marker{font-size:9px;color:var(--experience-accent)}
+.experience-section .experience-details details[open] summary{margin-bottom:4px;color:var(--experience-accent)}
+.experience-section .experience-details details:focus-within{outline:none}
+.experience-section .experience-details summary:focus-visible{outline:2px solid var(--experience-accent);outline-offset:3px;border-radius:2px}
+.city-portal .experience-section p.experience-detail-intro,.experience-section p.experience-detail-intro{font-size:12px;line-height:1.7;color:#e8e8e8;margin:4px 0 12px}
+.experience-section .experience-details ul{padding-left:17px;margin:4px 0 15px}
+.experience-section .experience-details li{font-size:12px;line-height:1.7;margin:0 0 10px;color:#e8e8e8}
+.experience-section .experience-details .verified-tools{font-size:12px;padding:4px 0 15px;gap:8px 13px}
+#experience.experience-section{padding-top:65px;padding-bottom:65px}
+#experience .experience-timeline{max-width:760px}
+#experience .experience-summary{font-size:16px}
+#experience .experience-role{font-size:15px}
+#experience .experience-date{font-size:12px}
+#experience .experience-stack li{font-size:12px}
+#experience .experience-details summary{font-size:13px;min-height:44px}
+#experience .experience-details li{font-size:14px}
+#experience .employment{padding-bottom:30px}
+#experience .experience-entry+.experience-entry .employment{padding-top:30px}
+#experience .experience-entry+.experience-entry:before{top:79px}
+@media(min-width:1500px){
+ .city-portal .city-stop.experience-section{padding:38px 40px}
+ .experience-section p.experience-lede{font-size:16px;margin-bottom:32px}
+ .experience-section .employment h3{font-size:27px}
+ .city-portal .experience-section p.experience-summary{font-size:14px}
+ .experience-date{font-size:12px}
+ .city-portal .experience-section p.experience-role{font-size:14px}
+ .city-portal .experience-section .experience-stack li{font-size:11px}
+}
+@media(max-width:760px){
+ .city-portal .city-stop.experience-section{left:5%;right:5%;width:auto;padding:24px 22px;border-radius:0!important;max-height:calc(100svh - 205px)}
+ .experience-section h2{font-size:32px;margin-top:13px}
+ .experience-section p.experience-lede{font-size:13px;margin-bottom:24px}
+ .experience-timeline{padding-left:24px}
+ .experience-timeline:before{left:4px}
+ .experience-entry:before{left:-24px;width:10px;height:10px}
+ .experience-section .employment h3{font-size:23px}
+ .experience-details{column-gap:15px}
+ .experience-section .experience-details summary{min-height:44px;padding:12px 0}
+ .city-portal .experience-section p.experience-summary{font-size:13px;line-height:1.7}
+ #experience.experience-section{padding-top:40px;padding-bottom:40px}
+}
+@media(max-width:370px){
+ .city-portal .city-stop.experience-section{left:4%;right:4%;bottom:135px;max-height:calc(100svh - 230px);padding:20px 17px}
+ .experience-section h2{font-size:29px}
+ .experience-section .experience-stack li{padding-inline:8px}
+}
+@media(orientation:landscape) and (max-height:550px){
+ .city-portal .city-stop.experience-section{left:auto;right:5%;top:80px;bottom:76px;width:52%;max-height:none;padding:20px 23px;border-radius:0!important}
+ .experience-section h2{font-size:28px}
+ .experience-section p.experience-lede{font-size:12px;margin-bottom:23px}
+ .experience-section .employment h3{font-size:22px}
+}
+@media(prefers-reduced-motion:reduce){.city-portal .city-stop.experience-section{backdrop-filter:none!important;-webkit-backdrop-filter:none}}
+
+/* Education uses the same timeline, with a quiet label rather than a new card. */
+.experience-kind{margin-left:5px;padding-left:8px;border-left:1px solid var(--experience-line);font-weight:500}
+.experience-education:before{border-radius:2px;transform:rotate(45deg)}
+.experience-location{color:var(--experience-muted)}

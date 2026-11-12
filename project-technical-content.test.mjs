@@ -1,0 +1,35 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+const read=f=>readFileSync(f,'utf8'),html=read('index.html');
+const hash=s=>createHash('sha256').update(s).digest('hex');
+const originalStacks={"codetrail": "8858816a55bf70d782b1b0b9382283916c15e7c3e044734ae94d96357856a57d", "lumicare": "0e3d74837335e323e07b9f5160318ffc1dc84ce0c3672b96d5f6d9d47af0f7d7", "golivescore": "b694a5f07043ae04e4385c058d8bd54dc86db5b3d20a3976c603f0fce88f0a46", "wishlist": "06117e6a455a1f141ca7a8b88ba2397fad72e433e4faff7725a82aeb061744b8", "jobhunt": "dbb92810bb9cae9059fadb333ff90c61850b473f97388ee40ea2512fa4f3e25d"};
+const counts={codetrail:8,lumicare:7,golivescore:8,wishlist:8,jobhunt:9};
+for(const[id,count]of Object.entries(counts)){
+ const reading=html.match(new RegExp('<section id="'+id+'".*?</section>','s'))[0];
+ const city=html.match(new RegExp('<article[^>]*data-stop="'+id+'".*?</article>','s'))[0];
+ const parts=b=>[...b.matchAll(/<details class="city-detail project-detail">.*?<\/details>/gs)].map(m=>m[0]);
+ const details=parts(reading);assert.deepEqual(details,parts(city),'Identical source content in both views: '+id);
+ assert.match(details[0],/>What I built</);
+ assert.equal((details[0].match(/<li>/g)||[]).length,count,'Evidence-grounded contributions: '+id);
+ assert.equal(hash(details[1]),originalStacks[id],'No unsupported stack additions: '+id);
+ assert.match(details[2],/>Inside the implementation</);assert((details[2].match(/<h3>/g)||[]).length>=6,'Detailed architecture and concepts: '+id);
+ assert(!/\d+%|million users|production.scale|fully autonomous|end.to.end success/i.test(reading),'No fabricated impact or completion claims: '+id);
+}
+const code=html.match(/<section id="codetrail".*?<\/section>/s)[0];
+assert.match(code,/In an earlier CodeTrail implementation/);assert.match(code,/browser-based learning with an on-device coding tutor/);
+assert.match(code,/Java learning path uses editing and code downloads/);assert.match(code,/Optional account-backed chat memory is separate from local inference/);
+const lumi=html.match(/<section id="lumicare".*?<\/section>/s)[0];
+assert.match(lumi,/per-message request\/response flow from React through Express to OpenAI/);assert.match(lumi,/browser-local contents/);
+assert(!/payment processing|order fulfillment|multi-turn memory/i.test(lumi));
+const wish=html.match(/<section id="wishlist".*?<\/section>/s)[0];assert.match(wish,/polling with access checks/);assert.match(wish,/network-only/);
+const job=html.match(/<section id="jobhunt".*?<\/section>/s)[0];
+assert.match(job,/built the core architecture/);assert.match(job,/ongoing development project/);assert.match(job,/Controlled automated tests exercise data integrity/);
+for(const label of ['Career Manager','Browser Planner','Job Analyzer','Application Writer','The agentic workflow'])assert(job.includes(label));
+assert(!/Built, tested and next|Still to verify|>Roadmap<|What I’m building|In development\. A public demo/.test(job));
+const gls=html.match(/<section id="golivescore".*?<\/section>/s)[0];assert.match(gls,/React Native and TypeScript present the experience/);assert(!gls.includes('SwiftUI'));
+const skills=html.match(/<section id="skills".*?<\/section>/s)[0];
+for(const name of ['TypeScript','React','Next.js','Python','FastAPI','Django','OpenAI API','AI agents','AI evaluations','AWS','Kubernetes','Terraform','Go','PostgreSQL','Redis','Kafka','Java','Spring','C#','.NET','Microsoft Azure'])assert(skills.includes('>'+name+'</span>'),'Requested toolkit skill: '+name);
+assert(!/project-technical-review|codetrail-export|Editorial and evidence notes|internalEvidence/.test(html),'Internal evidence stays out of public copy');
+assert.equal(html,read('dist/index.html'));
+console.log('PASS all five deeper project narratives, stack provenance, implementation boundaries, requested toolkit skills, both-view parity and no internal evidence leakage');

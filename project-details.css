@@ -1,0 +1,47 @@
+/* Editorial project stories. No card backgrounds or external dependencies. */
+.project-showcase{--project-accent:#d8e6f1;--project-muted:#c4cbd3;--project-rule:#d5e2ef3b;isolation:isolate}
+.project-showcase .project-eyebrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin:0 0 12px;font:500 10px/1.5 "Helvetica Neue",Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--project-muted)}
+.project-showcase .project-status{display:inline-flex;align-items:center;gap:7px;letter-spacing:.08em;font-size:10px;color:#e0e8ef}
+.project-showcase .project-status:before{content:"";width:5px;height:5px;flex:none;border-radius:50%;background:#d4b38b;box-shadow:0 0 7px #d4b38b35}
+.project-showcase h2{letter-spacing:-.045em;line-height:1.02;font-weight:500;text-wrap:balance}
+.project-showcase .project-lede{max-width:58ch;font-size:clamp(15px,1.2vw,18px);line-height:1.65;color:#eef2f6}
+.project-showcase .project-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 26px;margin:22px 0 25px}
+.project-showcase .project-action{display:inline-flex;align-items:center;justify-content:flex-start;gap:9px;min-height:44px;padding:6px 0;color:var(--project-accent);font-size:12px;font-weight:500;line-height:1.4;text-decoration:none;border-bottom:1px solid #cedde66b;transition:color .18s,border-color .18s}
+.project-showcase .project-action:after{content:"↗";font-size:15px;font-weight:400;transition:transform .18s}
+.project-showcase .project-action.primary{color:#fff1dd;border-color:#e3c4a18c}
+.project-showcase .project-action:hover{color:#fff;border-color:#fff}.project-showcase .project-action:hover:after{transform:translate(2px,-2px)}
+.project-showcase .project-action-unavailable{display:inline-block;font-size:11px;line-height:1.5;color:#bcc5cf;max-width:30ch}
+.project-showcase .project-action:focus-visible,.project-showcase .project-detail>summary:focus-visible{outline:2px solid #e5eff7;outline-offset:5px;border-radius:2px}
+.project-showcase .project-detail{border:0;border-top:1px solid var(--project-rule);margin:0;padding:0;background:none;box-shadow:none;border-radius:0}
+.project-showcase .project-detail:last-of-type{border-bottom:1px solid var(--project-rule)}
+.project-showcase .project-detail>summary{list-style:none;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:16px;min-height:58px;padding:16px 0;cursor:pointer;color:#eff4f7;font-size:14px;line-height:1.4;-webkit-tap-highlight-color:transparent}
+.project-showcase .project-detail>summary::-webkit-details-marker{display:none}
+.project-showcase .project-detail>summary:after{content:"+";grid-column:2;grid-row:1 / span 2;font-size:24px;line-height:1;font-weight:300;color:#d6e2ed;transition:transform .22s}
+.project-showcase .project-detail[open]>summary:after{transform:rotate(45deg)}
+.project-showcase .project-detail-label{font-weight:500;letter-spacing:-.01em}
+.project-showcase .project-detail>summary small{grid-column:1;display:block;margin-top:5px;font-size:11px;font-weight:400;color:var(--project-muted)}
+.project-showcase .project-detail-body{padding:0 0 22px;max-width:66ch}
+.project-showcase .project-detail[open]>.project-detail-body{animation:project-detail-reveal .22s ease-out both}
+.project-showcase .project-detail-body p{font-size:14px;line-height:1.75;margin:0 0 13px;color:#e7edf2}
+.project-showcase .project-detail-body h3,.project-showcase .project-stack-group h3{font-size:11px;letter-spacing:.10em;text-transform:uppercase;font-weight:500;line-height:1.5;margin:20px 0 10px;color:#d5e0e9}
+.project-showcase .project-responsibilities{list-style:none;padding:0;margin:0;counter-reset:project-duty}
+.project-showcase .project-responsibilities li{position:relative;padding:0 0 13px 28px;margin:0;font-size:13px;line-height:1.75;color:#edf1f5;counter-increment:project-duty}
+.project-showcase .project-responsibilities li:before{content:counter(project-duty,decimal-leading-zero);position:absolute;left:0;top:3px;font-size:9px;letter-spacing:.02em;color:#bac9d6;font-variant-numeric:tabular-nums}
+.project-showcase .project-tags{display:flex;flex-wrap:wrap;gap:8px 16px;list-style:none;padding:0;margin:0}
+.project-showcase .project-tags li{font-size:12px;line-height:1.7;color:#edf3f7;padding:0;margin:0;white-space:normal}
+.project-showcase .project-tags li:not(:last-child):after{content:" /";padding-left:14px;color:#8297aa}
+.project-showcase .project-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 24px;margin:18px 0 24px}
+.project-showcase .project-facts div{min-width:0}.project-showcase .project-facts dt{font-size:9px;line-height:1.5;letter-spacing:.12em;text-transform:uppercase;color:#bdcbd7;margin-bottom:4px}.project-showcase .project-facts dd{font-size:12px;line-height:1.6;margin:0;color:#e9eef4;overflow-wrap:anywhere}
+.project-showcase .project-scope-note{font-size:11px!important;line-height:1.65!important;color:#c4cdd7!important;margin-top:16px!important}
+.reading-view .project-showcase{padding-top:66px;padding-bottom:66px}
+.reading-view .project-showcase .project-actions{margin-top:25px}.reading-view .project-showcase .project-lede{font-size:18px}
+@keyframes project-detail-reveal{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.city-stop.project-showcase .project-actions{gap:8px 22px;margin:12px 0 18px}.city-stop.project-showcase .project-lede{font-size:14px;line-height:1.65}.project-showcase .project-detail>summary{min-height:52px;padding:13px 0;font-size:13px}.project-showcase .project-detail>summary small{font-size:10px}.project-showcase .project-detail-body p{font-size:13px}.project-showcase .project-responsibilities li{font-size:12px}.project-showcase .project-facts{gap:12px 20px}.reading-view .project-showcase .project-lede{font-size:16px}}
+@media(orientation:landscape) and (max-height:550px){.city-stop.project-showcase .project-actions{margin:10px 0 14px;gap:5px 20px}.city-stop.project-showcase .project-detail>summary{min-height:44px;padding:10px 0}.city-stop.project-showcase .project-lede{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.project-showcase .project-action,.project-showcase .project-action:after,.project-showcase .project-detail>summary:after{transition:none}.project-showcase .project-detail[open]>.project-detail-body{animation:none}}
+/* Override the legacy global .primary button surface on project text actions. */
+.project-showcase a.project-action,.project-showcase a.project-action.primary{background:none!important;border-radius:0;box-shadow:none;text-shadow:none;padding:6px 0}
+.city-stop.project-showcase{overflow-x:hidden}
+.city-stop.project-showcase .project-detail>summary:focus-visible{outline-offset:-2px}
+/* Geometric external-link arrow avoids missing-glyph boxes on lean fonts. */
+.project-showcase .project-action:after{content:"";display:inline-block;width:8px;height:8px;flex:none;border-top:1px solid currentColor;border-right:1px solid currentColor;background:linear-gradient(135deg,transparent 44%,currentColor 45% 55%,transparent 56%);font-size:0}

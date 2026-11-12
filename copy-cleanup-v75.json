@@ -1,0 +1,117 @@
+[
+  {
+    "before": "I design and support enterprise applications across services, data and user interfaces.",
+    "after": "I design and support enterprise distributed applications across services, data and user interfaces.",
+    "count": 2
+  },
+  {
+    "before": "<p class=\"project-scope-note\">These details describe the browser-learning and on-device tutor implementation. The current hosted deployment may use a different architecture.</p>",
+    "after": "<p>In an earlier CodeTrail implementation, I combined browser-based learning with an on-device coding tutor.</p>",
+    "count": 2
+  },
+  {
+    "before": "<p>The on-device tutor requires compatible hardware and a model download. Optional account-backed chat memory is separate from local inference.</p>",
+    "after": "",
+    "count": 2
+  },
+  {
+    "before": "<p>Amaya sends the latest message to the model. The displayed chat history is not sent as model conversation context.</p>",
+    "after": "",
+    "count": 2
+  },
+  {
+    "before": "<p class=\"project-scope-note\">These details describe the React Native implementation documented in my résumé.</p>",
+    "after": "",
+    "count": 2
+  },
+  {
+    "before": "<p class=\"project-scope-note\">This describes the core architecture and controlled-test workflows. Those tests do not establish successful live employer submissions.</p>",
+    "after": "",
+    "count": 2
+  },
+  {
+    "before": "<p>This describes the workflow, not a live AI demo.</p>",
+    "after": "",
+    "count": 4
+  },
+  {
+    "before": "<p class=\"ai-limitation\">Guarded orchestration and recovery paths have controlled-test coverage. Complete live employer-application execution remains under development.</p>",
+    "after": "",
+    "count": 2
+  },
+  {
+    "before": "<p class=\"ai-limitation\">This walkthrough describes an earlier on-device implementation, not the architecture of the current live CodeTrail site. It requires compatible hardware and browser support. Optional account memory can save conversations; local inference does not mean all application data stays on-device.</p>",
+    "after": "",
+    "count": 2
+  },
+  {
+    "before": "<p class=\"ai-limitation\">This describes the original SWOT &amp; Study application in the résumé, not the distinct on-device CodeTrail tutor implementation.</p>",
+    "after": "",
+    "count": 2
+  },
+  {
+    "before": "<p class=\"ai-limitation\">No verified public app link, evaluation benchmark or named model provider is established for this project.</p>",
+    "after": "",
+    "count": 2
+  },
+  {
+    "before": "<span class=\"project-action-unavailable\">Repository link currently unavailable</span>",
+    "after": "",
+    "count": 2
+  },
+  {
+    "before": "<span class=\"project-action-unavailable\">Website not publicly linked</span>",
+    "after": "",
+    "count": 4
+  },
+  {
+    "before": "<span class=\"project-action-unavailable\">GitHub repository not publicly linked</span>",
+    "after": "",
+    "count": 2
+  },
+  {
+    "before": "<div class=\"project-actions\" aria-label=\"Project links\"></div>",
+    "after": "",
+    "count": 2
+  },
+  {
+    "before": "I built the core architecture of an AI-assisted career workspace that connects candidate facts, job analysis, reviewed application content and controlled browser workflows.",
+    "after": "I built the core architecture of JobHunt AI, an ongoing development project connecting candidate facts, job analysis, reviewed application content and controlled browser workflows.",
+    "count": 2
+  },
+  {
+    "before": "JobHunt AI · Ongoing development",
+    "after": "JobHunt AI · Career workflow architecture",
+    "count": 2
+  },
+  {
+    "before": "<p class=\"disclosure\">Interface-level overview only. Architecture, outcomes, and source links will be added after verification.</p>",
+    "after": "",
+    "count": 1
+  },
+  {
+    "before": "<div class=\"skills\"><div><span>BUILD</span><h3>Full-stack systems</h3><p>C# / .NET · REST APIs<br>Angular · TypeScript · React</p></div><div><span>CONNECT</span><h3>Data & integration</h3><p>SQL Server · Oracle<br>Asynchronous processing</p></div><div><span>DELIVER</span><h3>Cloud & reliability</h3><p>Azure · Terraform · CI/CD<br>Testing · Observability</p></div></div>",
+    "after": "",
+    "count": 1
+  },
+  {
+    "before": "<section id=\"contact\" class=\"wrap section verified-section\"><h2>Let’s build what’s next.</h2><p>Thank you for exploring my work. Connect with me to talk about software engineering and opportunities.</p><div class=\"direct-contact contact-links\" aria-label=\"Contact and résumé\"><a class=\"contact-tile\" data-contact=\"linkedin\" href=\"https://www.linkedin.com/in/naveen-achanta-a8607536/\" target=\"_blank\" rel=\"noopener noreferrer\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5.2 8.3h3.2V19H5.2zM6.8 3a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8M10.8 8.3h3v1.5c.7-1.1 1.7-1.8 3.3-1.8 3 0 3.9 1.9 3.9 4.5V19h-3.2v-5.8c0-1.4-.2-2.6-1.8-2.6-1.8 0-2 1.4-2 2.7V19h-3.2z\" fill=\"currentColor\"/></svg><span class=\"contact-tile-label\">LinkedIn<small>Connect</small></span><span class=\"contact-tile-arrow\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\"><path d=\"M3 9 9 3M3 3h6v6\"/></svg></span></a><a class=\"contact-tile\" data-contact=\"gmail\" href=\"mailto:Achantanaveenk04@gmail.com\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M3 6.5 12 13l9-6.5M3 7v12h4V9.5M21 7v12h-4V9.5M3 7V5l9 6.5L21 5v2\"/></svg><span class=\"contact-tile-label\">Gmail<small>Send an email</small></span><span class=\"contact-tile-arrow\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\"><path d=\"M3 9 9 3M3 3h6v6\"/></svg></span></a><a class=\"contact-tile\" data-contact=\"github\" href=\"https://github.com/NaveenAchanta12?tab=repositories\" target=\"_blank\" rel=\"noopener noreferrer\"><svg class=\"github-mark\" aria-hidden=\"true\" focusable=\"false\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943\"/></svg><span class=\"contact-tile-label\">GitHub<small>Repositories</small></span><span class=\"contact-tile-arrow\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\"><path d=\"M3 9 9 3M3 3h6v6\"/></svg></span></a><a class=\"contact-tile\" data-contact=\"resume\" href=\"assets/documents/Naveen-Achanta-Resume.pdf\" download=\"Naveen-Achanta-Resume.pdf\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8zM14 3v5h5M12 11v6m-3-3 3 3 3-3\"/></svg><span class=\"contact-tile-label\">Résumé<small>Download PDF</small></span><span class=\"contact-tile-arrow\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\"><path d=\"M6 2v8M2 6l4 4 4-4\"/></svg></span></a></div><div class=\"type-intro\" tabindex=\"0\" role=\"group\" aria-label=\"Introduction\" aria-describedby=\"typing-motion-help\" title=\"Hover or focus to pause temporarily. Press Escape to toggle a lasting pause.\"><span id=\"typing-motion-help\" class=\"sr-only\">Hover or focus this introduction to pause temporarily. Press Escape to toggle a lasting pause; move focus away to let it animate again when resumed.</span><span class=\"sr-only\">I am a software engineer and full-stack developer building enterprise systems, connecting APIs and interfaces.</span><div class=\"type-line\" aria-hidden=\"true\">I am <span class=\"typed-role\">a Software Engineer</span><span class=\"type-cursor\">|</span></div></div></section><section id=\"engineering\" class=\"section engineering\"><div class=\"wrap\"><div class=\"section-heading\"><div><div class=\"eyebrow\">02 / UNDER THE SURFACE</div><h2>Good interfaces.<br>Better foundations.</h2></div><p>Explore a small, working interaction.<br>Not just a technology list.</p></div><div class=\"demo\"><div class=\"demo-top\"><span>REQUEST LIFECYCLE</span><span class=\"demo-tag\">INTERACTIVE SIMULATION</span></div><div class=\"nodes\"><div class=\"node\" data-step=\"0\"><span>01</span><b>Browser</b><small>User interaction</small></div><i>→</i><div class=\"node\" data-step=\"1\"><span>02</span><b>API</b><small>Validation</small></div><i>→</i><div class=\"node\" data-step=\"2\"><span>03</span><b>Service</b><small>Business logic</small></div><i>→</i><div class=\"node\" data-step=\"3\"><span>04</span><b>Data</b><small>Persistence</small></div></div><div class=\"demo-controls\"><label>Scenario <select id=\"scenario\"><option value=\"success\">Successful request</option><option value=\"slow\">Slow network</option><option value=\"error\">Service unavailable</option></select></label><button class=\"primary\" id=\"run\">Run request <span>↗</span></button></div><output id=\"demo-status\" aria-live=\"polite\">Ready. Choose a scenario to follow the request.</output></div></div></section>",
+    "after": "<section id=\"engineering\" class=\"section engineering\"><div class=\"wrap\"><div class=\"section-heading\"><div><div class=\"eyebrow\">02 / UNDER THE SURFACE</div><h2>Good interfaces.<br>Better foundations.</h2></div><p>Explore a small, working interaction.<br>Not just a technology list.</p></div><div class=\"demo\"><div class=\"demo-top\"><span>REQUEST LIFECYCLE</span><span class=\"demo-tag\">INTERACTIVE SIMULATION</span></div><div class=\"nodes\"><div class=\"node\" data-step=\"0\"><span>01</span><b>Browser</b><small>User interaction</small></div><i>→</i><div class=\"node\" data-step=\"1\"><span>02</span><b>API</b><small>Validation</small></div><i>→</i><div class=\"node\" data-step=\"2\"><span>03</span><b>Service</b><small>Business logic</small></div><i>→</i><div class=\"node\" data-step=\"3\"><span>04</span><b>Data</b><small>Persistence</small></div></div><div class=\"demo-controls\"><label>Scenario <select id=\"scenario\"><option value=\"success\">Successful request</option><option value=\"slow\">Slow network</option><option value=\"error\">Service unavailable</option></select></label><button class=\"primary\" id=\"run\">Run request <span>↗</span></button></div><output id=\"demo-status\" aria-live=\"polite\">Ready. Choose a scenario to follow the request.</output></div></div></section><section id=\"contact\" class=\"wrap section verified-section\"><h2>Let’s build what’s next.</h2><p>Thank you for exploring my work. Connect with me to talk about software engineering and opportunities.</p><div class=\"direct-contact contact-links\" aria-label=\"Contact and résumé\"><a class=\"contact-tile\" data-contact=\"linkedin\" href=\"https://www.linkedin.com/in/naveen-achanta-a8607536/\" target=\"_blank\" rel=\"noopener noreferrer\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5.2 8.3h3.2V19H5.2zM6.8 3a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8M10.8 8.3h3v1.5c.7-1.1 1.7-1.8 3.3-1.8 3 0 3.9 1.9 3.9 4.5V19h-3.2v-5.8c0-1.4-.2-2.6-1.8-2.6-1.8 0-2 1.4-2 2.7V19h-3.2z\" fill=\"currentColor\"/></svg><span class=\"contact-tile-label\">LinkedIn<small>Connect</small></span><span class=\"contact-tile-arrow\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\"><path d=\"M3 9 9 3M3 3h6v6\"/></svg></span></a><a class=\"contact-tile\" data-contact=\"gmail\" href=\"mailto:Achantanaveenk04@gmail.com\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M3 6.5 12 13l9-6.5M3 7v12h4V9.5M21 7v12h-4V9.5M3 7V5l9 6.5L21 5v2\"/></svg><span class=\"contact-tile-label\">Gmail<small>Send an email</small></span><span class=\"contact-tile-arrow\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\"><path d=\"M3 9 9 3M3 3h6v6\"/></svg></span></a><a class=\"contact-tile\" data-contact=\"github\" href=\"https://github.com/NaveenAchanta12?tab=repositories\" target=\"_blank\" rel=\"noopener noreferrer\"><svg class=\"github-mark\" aria-hidden=\"true\" focusable=\"false\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943\"/></svg><span class=\"contact-tile-label\">GitHub<small>Repositories</small></span><span class=\"contact-tile-arrow\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\"><path d=\"M3 9 9 3M3 3h6v6\"/></svg></span></a><a class=\"contact-tile\" data-contact=\"resume\" href=\"assets/documents/Naveen-Achanta-Resume.pdf\" download=\"Naveen-Achanta-Resume.pdf\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8zM14 3v5h5M12 11v6m-3-3 3 3 3-3\"/></svg><span class=\"contact-tile-label\">Résumé<small>Download PDF</small></span><span class=\"contact-tile-arrow\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\"><path d=\"M6 2v8M2 6l4 4 4-4\"/></svg></span></a></div><div class=\"type-intro\" tabindex=\"0\" role=\"group\" aria-label=\"Introduction\" aria-describedby=\"typing-motion-help\" title=\"Hover or focus to pause temporarily. Press Escape to toggle a lasting pause.\"><span id=\"typing-motion-help\" class=\"sr-only\">Hover or focus this introduction to pause temporarily. Press Escape to toggle a lasting pause; move focus away to let it animate again when resumed.</span><span class=\"sr-only\">I am a software engineer and full-stack developer building enterprise systems, connecting APIs and interfaces.</span><div class=\"type-line\" aria-hidden=\"true\">I am <span class=\"typed-role\">a Software Engineer</span><span class=\"type-cursor\">|</span></div></div></section>",
+    "count": 1
+  },
+  {
+    "before": "<a href=\"#ai\">AI engineering</a><a href=\"#contact\">Contact</a>",
+    "after": "<a href=\"#ai\">AI engineering</a><a href=\"#engineering\">Engineering lab</a><a href=\"#contact\">Contact</a>",
+    "count": 1
+  },
+  {
+    "before": "<li>Azure</li><li>Prompt engineering</li>",
+    "after": "<li>Azure</li><li>Kubernetes</li><li>Prompt engineering</li>",
+    "count": 2
+  },
+  {
+    "before": "<span><img src=\"assets/technology-marks/azure.svg\" alt=\"\" width=\"18\" height=\"18\">Azure</span><span>Azure DevOps</span>",
+    "after": "<span><img src=\"assets/technology-marks/azure.svg\" alt=\"\" width=\"18\" height=\"18\">Azure</span><span>Kubernetes</span><span>Azure DevOps</span>",
+    "count": 2
+  }
+]

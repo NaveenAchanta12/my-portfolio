@@ -1,0 +1,6 @@
+const stageElement=document.querySelector('.stage');const artboard=document.createElement('div');artboard.className='hero-artboard';stageElement.append(artboard);artboard.append(document.querySelector('.hero-name'),document.querySelector('.scene'));
+document.querySelector('.hero-name').setAttribute('data-name','NAVEEN\nACHANTA');
+// Small physical details refine the same continuous chassis; no second laptop asset.
+const keyRows=[['esc','F1','F2','F3','F4','F5','F6','F7','F8','F9','F10','F11','F12','⌫'],['`','1','2','3','4','5','6','7','8','9','0','−','=','delete'],['tab','Q','W','E','R','T','Y','U','I','O','P','[',']','\\'],['caps','A','S','D','F','G','H','J','K','L',';',"'",'return'],['shift','Z','X','C','V','B','N','M',',','.','/','shift'],['fn','ctrl','option','⌘','space','⌘','option','←','↑','↓','→']];
+const keyboard=document.querySelector('.keyboard');keyboard.setAttribute('aria-hidden','true');
+keyboard.replaceChildren(...keyRows.map(keys=>{const row=document.createElement('div');row.className='key-row';for(const label of keys){const key=document.createElement('span');key.textContent=label==='space'?'':label;if(label==='space')key.className='space-key';else if(label.length>2)key.className='wide-key';row.append(key);}return row;}));

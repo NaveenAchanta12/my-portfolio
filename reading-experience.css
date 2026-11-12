@@ -1,0 +1,292 @@
+/* Reading-only editorial chapters. City assets, positioning and controls are untouched. */
+.reading-mode{--reading-paper:#edf0ed;--reading-muted:#acb6b4;--reading-accent:#c2d9ca;background:#0a1011}
+.reading-mode main{margin-top:0!important;background:#0a1011!important;color:var(--reading-paper);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.reading-mode .topbar{background:#0a1011f5!important;border-bottom:1px solid #c2d9ca1a!important;backdrop-filter:none;padding-inline:5%}
+.reading-mode .wordmark{color:var(--reading-paper)}
+.reading-mode .wordmark span{color:var(--reading-muted)}
+.reading-mode .city-nav .reading-toggle{min-height:42px;padding:10px 15px;border-color:#c2d9ca50;color:var(--reading-paper);border-radius:999px}
+.reading-mode .reading-view{position:relative;isolation:isolate;padding:0 5% 0 clamp(215px,20vw,300px);background:radial-gradient(ellipse at 85% 4%,#50685b18,transparent 28%),radial-gradient(ellipse at 100% 63%,#28414d1a,transparent 25%)}
+.reading-mode .reading-index{position:fixed;z-index:12;left:5%;top:50%;transform:translateY(-43%);width:150px;display:flex;flex-direction:column;align-items:stretch;gap:1px;padding:0;border:0}
+.reading-index-title{display:none}
+.reading-mode .reading-index-title{display:block;color:#8b9c96;font-size:9px;font-weight:600;line-height:1.5;letter-spacing:.16em;text-transform:uppercase;margin:0 0 19px;padding:0 12px}
+.reading-mode .reading-index a{position:relative;display:flex;align-items:center;min-height:38px;padding:7px 12px;border-left:1px solid #c2d9ca27;text-decoration:none;color:#9daaa5;font-size:11px;font-weight:450;line-height:1.4;transition:color .2s,border-color .2s,background .2s}
+.reading-mode .reading-index a[aria-current]{color:#eef5ee;border-left-color:#c9e1d0;background:linear-gradient(90deg,#c2d9ca0c,transparent)}
+.reading-mode .reading-index a:hover{color:#fff}
+.reading-mode .reading-index a:focus-visible{outline:2px solid var(--reading-accent);outline-offset:3px;border-radius:2px}
+.reading-progress{display:none}
+.reading-mode .reading-progress{display:block;position:fixed;z-index:32;top:0;left:0;right:0;height:2px;background:transparent;pointer-events:none}
+.reading-progress>span{display:block;height:100%;background:#c2d9ca;transform:scaleX(0);transform-origin:left}
+.reading-mode .reading-view .reading-scene{position:relative;display:flex;align-items:center;width:100%;max-width:1140px;min-height:100svh;margin:0 auto;padding:120px 0;scroll-margin-top:0;border:0;outline:none}
+.reading-mode .reading-view #about{padding-top:140px}
+.reading-scene-content{width:100%;min-width:0}
+.reading-mode .reading-story-ready .reading-scene-content{opacity:var(--reading-opacity,1);transform:translate3d(0,var(--reading-shift,0px),0)}
+/* Focused text and interactive controls never fade out under a keyboard user. */
+.reading-mode .reading-scene:focus-within:not(:focus) .reading-scene-content{opacity:1;transform:none}
+.reading-mode .reading-chapter{display:flex;align-items:center;gap:13px;margin:0 0 31px;color:#a9beb1;font:500 10px/1.5 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.reading-chapter-number{color:#ceded3;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.reading-chapter-number::after{content:'/';margin-left:13px;color:#5e7067}
+.reading-mode .reading-view h2{font-family:inherit;font-size:clamp(38px,4.5vw,66px);font-weight:500;line-height:1.06;letter-spacing:-.055em;color:#f0f2ef;max-width:17ch;margin:0 0 25px;text-wrap:balance}
+.reading-mode .reading-view #about h2{font-size:clamp(48px,5.9vw,86px);max-width:17ch;margin-bottom:35px}
+.reading-mode .reading-view .reading-scene-content>p{max-width:70ch;color:#b8c3be;font-size:15px;line-height:1.85;margin:0 0 18px;text-wrap:pretty}
+.reading-mode #about .reading-scene-content>p:first-of-type{font-size:17px;color:#e0e6e1;line-height:1.8;max-width:65ch}
+.reading-mode .reading-next{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;margin-top:28px;padding:12px 0;border-bottom:1px solid #c2d9ca65;color:#dce7df;font-size:11px;font-weight:500;text-decoration:none}
+.reading-mode .reading-next:focus-visible{outline:2px solid var(--reading-accent);outline-offset:6px}
+.reading-mode .project-refined .project-layout{grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:clamp(30px,4vw,64px)}
+.reading-mode .project-refined .project-overview{padding:0}
+.reading-mode .project-refined .project-meta{color:#a6b7ae;font-size:11px;line-height:1.8;margin-bottom:30px}
+.reading-mode .project-refined .project-about-label{color:#849a8d;font-size:9px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}
+.reading-mode .project-refined .project-lede{max-width:46ch;font-size:15px;line-height:1.85;color:#c4cfc8}
+.reading-mode .project-refined .project-topics{gap:11px}
+.reading-mode .project-refined .project-topic-trigger{height:170px;padding:18px 14px;border:1px solid #e9f2fa52;border-radius:12px;background:linear-gradient(135deg,#f5f9fb17,#f5f9fb03),#e8eff31c;box-shadow:inset 0 1px 0 #ffffff20,0 8px 22px #0000000d;backdrop-filter:blur(14px) saturate(115%);-webkit-backdrop-filter:blur(14px) saturate(115%);text-shadow:0 1px 3px #0005}
+.reading-mode .project-refined .project-topic-title{font-size:12px;line-height:1.4;color:#e3ebe4}
+.reading-mode .project-refined .project-topic-hint{color:#94a79a;font-size:9px}
+.reading-mode .project-refined .project-topic-icon{color:#bccfbe}
+.reading-mode .project-refined .project-topic-arrow{color:#b4c8b9}
+.reading-mode .project-refined .project-topic-trigger:hover{background:linear-gradient(135deg,#f5f9fb25,#f5f9fb09),#e8eff32c;border-color:#f5faff9c}
+.reading-mode .project-refined .project-actions{border-color:#c2d9ca27}
+.reading-mode .project-refined a.project-action.primary{background:#e3e9e2!important;border-color:#e3e9e2;color:#111a15}
+.reading-mode .project-refined .project-action-unavailable,.reading-mode .project-refined .link-pending{color:#9eafa3}
+.reading-mode .project-refined dialog.project-reveal{max-height:min(76dvh,640px)}
+.reading-mode .project-refined dialog.project-reveal::backdrop{background:#0309079c}
+.reading-mode .project-refined .project-reveal h2{font-size:25px;letter-spacing:-.035em;max-width:none;margin:0;line-height:1.2}
+.reading-mode .project-refined .project-reveal-context{color:#acbeb0}
+.reading-mode .engineering-toolkit .skill-atlas{grid-template-columns:minmax(220px,.85fr) minmax(0,1.15fr);gap:22px 35px}
+.reading-mode .engineering-toolkit .toolkit-heading p{color:#b8c6bd;line-height:1.8;font-size:14px}
+.reading-mode .engineering-toolkit .atlas-filters button{color:#9caea1;text-shadow:none}
+.reading-mode .engineering-toolkit .atlas-filters button[aria-pressed=true]{color:#e2eee4}
+.reading-mode .engineering-toolkit .atlas-grid{gap:13px}
+.reading-mode .engineering-toolkit .atlas-grid-overview .skill-element:nth-child(-n+3){grid-column:auto}
+.reading-mode .engineering-toolkit .skill-element{min-height:126px;background:linear-gradient(135deg,#c2d9ca10,#c2d9ca04);border-color:#c2d9ca30;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;text-shadow:none}
+.reading-mode .engineering-toolkit .skill-element .toolkit-name{font-size:11px;color:#e1eae2}
+.reading-mode .engineering-toolkit .skill-element .toolkit-context{color:#a6b6aa;font-size:9px}
+.reading-mode .engineering-toolkit .atlas-status{color:#93a599!important;font-size:9px!important}
+.reading-mode .experience-section .experience-lede{font-size:15px}
+.reading-mode .experience-section .experience-timeline{margin-top:45px}
+.reading-mode .experience-section .employment{margin-bottom:0}
+.reading-mode .experience-section .experience-summary{color:#bdcac0;font-size:14px;max-width:65ch}
+.reading-mode .experience-section .experience-details.project-topics{max-width:470px}
+.reading-mode .experience-section .experience-details .project-topic-trigger{height:78px}
+.reading-mode .experience-section .experience-details .project-topic-title{font-size:11px}
+.reading-mode .experience-section .experience-role,.reading-mode .experience-study .study-copy{color:#c6d2c9}
+.reading-mode .experience-section .experience-study .study-copy{font-size:13px}
+.reading-mode .ai-practice-section .ai-practice-signature{color:#a1b7a8;border-color:#c2d9ca30;font-size:11px}
+.reading-mode #contact .reading-scene-content>h2{font-size:clamp(48px,5.9vw,86px);max-width:12ch}
+.reading-mode #contact .reading-scene-content>p{max-width:50ch;font-size:16px;margin-bottom:35px}
+.reading-mode #contact .contact-links{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:850px;margin-top:32px}
+.reading-mode #contact .contact-tile{flex-direction:column;align-items:flex-start;gap:19px;min-height:135px;padding:20px 15px;border-color:#c2d9ca38;border-radius:12px;background:linear-gradient(135deg,#c2d9ca10,#c2d9ca04);backdrop-filter:none;-webkit-backdrop-filter:none}
+.reading-mode #contact .contact-tile-label{font-size:12px;color:#dfe9e1}
+.reading-mode #contact .contact-tile-label small{font-size:9px;color:#9aafa0}
+.reading-mode #contact .contact-tile>svg{width:27px;height:27px;color:#c3d6c8}
+.reading-mode #contact .contact-tile-arrow{right:11px;top:11px}
+.reading-mode #contact .type-intro{margin:42px 0 0;padding-top:26px;border-top:1px solid #c2d9ca25}
+.reading-mode #contact .type-line{font-size:clamp(22px,2.6vw,36px);line-height:1.65;min-height:2.2em;color:#82988b}
+.reading-mode #contact .typed-role{color:#d4e7d7;border:0;padding:0;overflow-wrap:normal}
+.reading-mode #contact .type-cursor{color:#b6d4bd}
+.reading-mode #contact .typing-toggle{min-height:44px;min-width:100px;margin:2px 0 0;color:#a0b6a7;text-align:left;font-size:10px;text-underline-offset:4px}
+.reading-mode #contact .typing-toggle:hover{text-decoration:underline}
+.reading-mode #contact .typing-toggle:focus-visible{outline:2px solid var(--reading-accent);outline-offset:3px}
+@media(min-width:1500px){.reading-mode .reading-view{padding-left:24vw;padding-right:8%}.reading-mode .reading-index{left:8%;width:160px}.reading-mode .reading-view #about h2,.reading-mode #contact .reading-scene-content>h2{font-size:88px}}
+@media(max-width:1100px){.reading-mode .reading-view{padding-left:180px;padding-right:5%}.reading-mode .reading-index{left:3%;width:130px}.reading-mode .project-refined .project-layout{grid-template-columns:1fr;gap:35px}.reading-mode .project-refined .project-lede{max-width:65ch}.reading-mode .project-refined .project-topics{max-width:620px}.reading-mode .project-refined .project-topic-trigger{height:145px}.reading-mode .engineering-toolkit .skill-atlas{grid-template-columns:minmax(180px,.85fr) minmax(0,1.15fr);gap:20px}.reading-mode .engineering-toolkit .atlas-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.reading-mode #contact .contact-links{gap:8px}.reading-mode #contact .contact-tile{padding:17px 10px}}
+@media(max-width:760px){
+ .reading-mode .topbar{padding-inline:6%}
+ .reading-mode .reading-view{padding:0 6%}
+ .reading-mode .reading-index{position:sticky;top:72px;left:auto;transform:none;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;width:calc(100% + 12vw);max-width:none;margin-left:-6vw;padding:0 6vw;gap:0;background:#0a1011f7;border-bottom:1px solid #c2d9ca20;scrollbar-width:none;z-index:14;overscroll-behavior-x:contain}
+ .reading-mode .reading-index::-webkit-scrollbar{display:none}
+ .reading-mode .reading-index-title{display:none}
+ .reading-mode .reading-index a{flex:none;min-height:47px;padding:12px 13px;font-size:10px;white-space:nowrap;border-left:0;border-bottom:1px solid transparent}
+ .reading-mode .reading-index a[aria-current]{border-bottom-color:#c2d9ca;background:#c2d9ca09}
+ .reading-mode .reading-view .reading-scene{min-height:90svh;padding:95px 0;scroll-margin-top:105px}
+ .reading-mode .reading-view #about{padding-top:110px;min-height:calc(100svh - 47px)}
+ .reading-mode .reading-chapter{font-size:9px;margin-bottom:25px;gap:10px}
+ .reading-mode .reading-view #about h2,.reading-mode #contact .reading-scene-content>h2{font-size:clamp(44px,10vw,68px);max-width:12ch;margin-bottom:29px}
+ .reading-mode .reading-view h2{font-size:clamp(36px,8vw,56px)}
+ .reading-mode #about .reading-scene-content>p:first-of-type{font-size:15px;line-height:1.8}
+ .reading-mode .reading-view .reading-scene-content>p{font-size:14px;line-height:1.85}
+ .reading-mode .project-refined .project-lede{font-size:14px;line-height:1.8}
+ .reading-mode .project-refined .project-topic-trigger{height:143px;padding:16px 11px}
+ .reading-mode .project-refined .project-topic-title{font-size:11px}
+ .reading-mode .project-refined .project-topic-hint{font-size:9px}
+ .reading-mode .project-refined .project-topics{gap:9px}
+ .reading-mode .engineering-toolkit .skill-atlas{display:flex;gap:22px}
+ .reading-mode .engineering-toolkit .atlas-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+ .reading-mode .engineering-toolkit .skill-element{min-height:120px}
+ .reading-mode .engineering-toolkit .skill-element .toolkit-name{font-size:12px}
+ .reading-mode .engineering-toolkit .atlas-filters button{font-size:11px}
+ .reading-mode #contact .contact-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .reading-mode #contact .contact-tile{min-height:120px;padding:17px 13px;gap:15px}
+ .reading-mode #contact .type-intro{margin-top:31px;padding-top:22px}
+ .reading-mode #contact .type-line{font-size:24px;min-height:3.3em;line-height:1.6}
+ .reading-mode #contact .typing-toggle{margin-top:5px}
+ .reading-mode .experience-section .experience-details .project-topic-trigger{height:80px;padding:13px 24px 13px 10px}
+}
+@media(max-width:370px){.reading-mode .engineering-toolkit .atlas-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.reading-mode .project-refined .project-topic-title{font-size:10px}.reading-mode .project-refined .project-topic-trigger{padding-inline:9px}.reading-mode #contact .contact-links{grid-template-columns:repeat(2,minmax(0,1fr))}.reading-mode #contact .type-line{font-size:22px}}
+@media(orientation:landscape) and (max-height:550px){.reading-mode .reading-index{top:75px;transform:none;max-height:calc(100svh - 100px);overflow-y:auto}.reading-mode .reading-index-title{margin-bottom:10px}.reading-mode .reading-index a{min-height:31px}.reading-mode .reading-view .reading-scene{padding-block:100px}}
+@media(prefers-reduced-motion:reduce){.reading-mode .reading-story-ready .reading-scene-content{opacity:1!important;transform:none!important}.reading-mode .reading-index a,.reading-mode .reading-progress>span{transition:none}.reading-mode #contact .typing-toggle{display:none}.reading-mode #contact .type-cursor{animation:none}}
+@media print{.reading-mode .reading-index,.reading-mode .reading-progress,.reading-mode .topbar{display:none}.reading-mode .reading-view{padding:0}.reading-mode .reading-view .reading-scene{min-height:0;padding:30px 0}.reading-mode .reading-story-ready .reading-scene-content{opacity:1!important;transform:none!important}}
+
+/* The retained request-lifecycle demo belongs to the same reading canvas. */
+.reading-mode #engineering{background:transparent}.reading-mode #engineering .wrap{width:100%;max-width:none}.reading-mode #engineering .eyebrow{display:none}.reading-mode #engineering .section-heading{align-items:start}.reading-mode #engineering .section-heading h2{font-size:clamp(36px,4vw,56px)}.reading-mode #engineering .demo{background:#0f1915;border-color:#c2d9ca30}.reading-mode #engineering .skills{margin-bottom:0}
+/* Anchors use the chapter's own breathing room, not the City's scroll padding. */
+html:has(body.reading-mode){scroll-padding-top:0}
+@media(min-width:761px){
+ .reading-mode .reading-view #contact{padding-block:100px}
+ .reading-mode #contact .reading-chapter{margin-bottom:22px}
+ .reading-mode #contact .reading-scene-content>h2{font-size:clamp(48px,5vw,72px);margin-bottom:22px}
+ .reading-mode #contact .reading-scene-content>p{font-size:15px;margin-bottom:24px}
+ .reading-mode #contact .contact-links{margin-top:24px}
+ .reading-mode #contact .contact-tile{min-height:114px;padding:17px 15px;gap:14px}
+ .reading-mode #contact .type-intro{margin-top:26px;padding-top:20px}
+ .reading-mode #contact .type-line{font-size:clamp(22px,2.4vw,32px);min-height:1.8em}
+}
+@media(max-width:440px){.reading-mode #engineering .nodes{display:grid;grid-template-columns:1fr 1fr;gap:12px}.reading-mode #engineering .nodes>i{display:none}.reading-mode #engineering .node{min-width:0;overflow-wrap:anywhere}.reading-mode #engineering .demo{padding:18px 12px}}
+
+/* Integrated contact signature: original white/green type, no separate panel. */
+.reading-mode #contact .type-intro{padding:0;border:0;margin:28px 0 0;outline-offset:8px}
+.reading-mode #contact .type-intro:focus-visible{outline:1px solid #a8c8b4;border-radius:2px}
+.reading-mode #contact .type-line{color:#f3f6fa;min-height:1.8em}
+.reading-mode #contact .typed-role{color:#15d65b;border:0;border-bottom:2px solid #137c38;padding:0 0 8px}
+.reading-mode #contact .type-cursor{color:#f3f6fa}
+.reading-mode .reading-view>footer{border:0}
+@media(max-width:760px){.reading-mode #contact .type-line{min-height:3.3em}.reading-mode #contact .type-intro{margin-top:27px}}
+/* Full-height chapters stay in normal document flow. Native scrolling can be
+   reversed or interrupted immediately; modal close never changes a snap state. */
+html:has(body.reading-mode){scroll-snap-type:none;scroll-behavior:auto}
+.reading-mode .reading-view .reading-scene{min-height:100svh;align-items:flex-start;padding-top:120px;padding-bottom:32px;scroll-snap-align:none;scroll-margin:0}
+.reading-mode .reading-view #about,.reading-mode .reading-view #contact{padding-top:120px;padding-bottom:32px}
+.reading-mode .reading-view>footer{padding-top:35px;padding-bottom:40px}
+/* Reading dialogs use a stable top-layer surface, without a 3D closing delay. */
+.reading-mode .project-refined dialog.project-reveal{transform:none;transition:none}
+.reading-mode .project-refined dialog.project-reveal::backdrop{transition:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+@media(max-width:760px){
+ .reading-mode .reading-view .reading-scene,.reading-mode .reading-view #about,.reading-mode .reading-view #contact{min-height:100svh;padding-top:144px;padding-bottom:28px;scroll-margin:0}
+}
+@media print{.reading-mode .reading-view .reading-scene{min-height:0;padding:30px 0}}
+
+@media(prefers-reduced-transparency:reduce){.reading-mode .project-refined .project-topic-trigger,.reading-mode .project-refined dialog.project-reveal{background:#27343e;backdrop-filter:none;-webkit-backdrop-filter:none}}
+
+/* A single pinned stage. The stage and its background never translate. */
+.reading-stage{display:contents}
+.reading-mode .reading-pinned{background:none}
+.reading-mode .reading-pinned .reading-stage{display:block;position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;overflow:clip;background:#0a1011;isolation:isolate}
+.reading-mode .reading-pinned .reading-stage>.reading-scene{position:absolute;inset:0 auto auto 0;display:block;width:100%;height:auto;min-height:0!important;margin:0;transform:none;z-index:0}
+/* Hiding is committed only after a complete synchronous first paint. */
+.reading-mode .reading-pinned.reading-stage-ready .reading-stage>.reading-scene{visibility:hidden;opacity:0;pointer-events:none}
+.reading-mode .reading-pinned.reading-stage-ready .reading-stage>.reading-scene.is-on-stage{visibility:visible}
+.reading-mode .reading-pinned.reading-stage-ready .reading-stage>.reading-scene.is-current{pointer-events:auto;z-index:1}
+.reading-mode .reading-pinned .reading-scene .reading-scene-content,.reading-mode .reading-pinned .reading-scene:focus-within .reading-scene-content{opacity:1;transform:none;transform-origin:top left}
+.reading-next-chapter{display:inline-flex;align-items:center;min-height:44px;margin-top:25px;color:#b4c8bc;font-size:11px;letter-spacing:.03em;text-decoration:none;border-bottom:1px solid #c2d9ca40}
+.reading-next-chapter:focus-visible{outline:2px solid #c2d9ca;outline-offset:4px}
+.reading-stage footer{padding:28px 0 0;border:0;margin:0}
+.reading-mode .reading-pinned .reading-scene-content>footer .replay{margin:0}
+@media(max-width:760px){.reading-mode .reading-pinned .reading-stage>.reading-scene{padding-top:144px;padding-bottom:28px}.reading-next-chapter{margin-top:20px}}
+@media(prefers-reduced-motion:reduce){.reading-mode .reading-pinned .reading-stage{position:static;height:auto;overflow:visible}.reading-mode .reading-pinned.reading-stage-ready .reading-stage>.reading-scene{position:relative;visibility:visible;opacity:1;pointer-events:auto}.reading-mode .reading-pinned .reading-scene .reading-scene-content{transform:none}}
+@media print{.reading-next-chapter{display:none}.reading-mode .reading-pinned{height:auto!important}.reading-mode .reading-pinned .reading-stage{position:static;height:auto;overflow:visible}.reading-mode .reading-pinned.reading-stage-ready .reading-stage>.reading-scene{position:relative;visibility:visible;opacity:1!important;pointer-events:auto}.reading-mode .reading-pinned .reading-scene .reading-scene-content{transform:none!important}}
+@media(max-width:760px){.reading-mode .reading-pinned .reading-index{position:fixed;top:72px;left:0;width:100%;margin:0;padding:0 6%;transform:none}}
+
+/* Promote only the one or two visible chapter surfaces, never the full story. */
+.reading-mode .reading-pinned{overflow-anchor:none}
+.reading-mode .reading-pinned .reading-scene.is-on-stage{will-change:opacity}
+.reading-mode .reading-pinned .reading-scene.is-on-stage>.reading-scene-content{will-change:transform}
+
+/* Native document Reading on phones, compact windows and touch-first tablets.
+   CSS also restores flow during the frame before the media-change event runs. */
+@media(max-width:1024px),(pointer:coarse){
+ .reading-mode .reading-view{height:auto!important}
+ .reading-mode .reading-view .reading-stage{display:contents;position:static;height:auto;overflow:visible}
+ .reading-mode .reading-view .reading-stage>.reading-scene{position:relative!important;inset:auto;visibility:visible!important;opacity:1!important;pointer-events:auto;min-height:100svh!important;margin:0 auto;transform:none;will-change:auto}
+ .reading-mode .reading-view .reading-stage>.reading-scene>.reading-scene-content{opacity:1!important;transform:none!important;will-change:auto}
+ .reading-mode #engineering .nodes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .reading-mode #engineering .nodes>i{display:none}
+ .reading-mode #engineering .node{min-width:0;overflow-wrap:anywhere}
+}
+
+/* Desktop Reading uses the available canvas before asking for another scroll.
+   This is layout, not scaling: prose and every project dialog remain intact.
+   Keep these rules independent of .reading-pinned so automatic document fallback
+   measures the same content after a short window or larger text is restored. */
+@media(min-width:1025px) and (pointer:fine){
+ .reading-mode .reading-view .reading-scene{padding-top:108px;padding-bottom:24px}
+ .reading-mode .reading-view #about,.reading-mode .reading-view #skills.engineering-toolkit,.reading-mode .reading-view #experience.experience-section,.reading-mode .reading-view #contact{padding-top:108px;padding-bottom:24px}
+ .reading-mode :is(#about,#skills,#codetrail,#lumicare,#golivescore,#jobhunt) .reading-chapter{margin-bottom:20px}
+ .reading-mode :is(#about,#skills,#codetrail,#lumicare,#golivescore,#jobhunt) .reading-next-chapter{margin-top:16px}
+ .reading-mode .reading-view #about h2{font-size:clamp(46px,4.25vw,64px);line-height:1.08;max-width:none;margin-bottom:24px}
+ .reading-mode .reading-view #about .reading-scene-content>p{max-width:78ch;font-size:15px;line-height:1.7;margin-bottom:14px}
+ .reading-mode .reading-view #about .reading-scene-content>p:first-of-type{font-size:16px;line-height:1.7;max-width:74ch}
+ .reading-mode :is(#codetrail,#lumicare).project-refined .project-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center}
+ .reading-mode :is(#codetrail,#lumicare,#golivescore,#jobhunt).project-refined .project-overview>h2{font-size:clamp(38px,3.5vw,54px);margin-bottom:18px;max-width:none}
+ .reading-mode :is(#codetrail,#lumicare,#golivescore,#jobhunt).project-refined .project-meta{margin-bottom:20px}
+ .reading-mode :is(#codetrail,#lumicare,#golivescore,#jobhunt).project-refined .project-lede{font-size:15px;line-height:1.7}
+ .reading-mode :is(#codetrail,#lumicare,#golivescore,#jobhunt).project-refined .project-topic-trigger{height:142px;padding:16px 12px}
+ .reading-mode :is(#codetrail,#lumicare,#golivescore,#jobhunt).project-refined .project-topic-title{font-size:12px;line-height:1.4}
+ .reading-mode :is(#codetrail,#lumicare,#golivescore,#jobhunt).project-refined .project-topic-hint{font-size:10px;line-height:1.4}
+ .reading-mode :is(#golivescore,#jobhunt).project-refined .project-layout{max-width:760px;gap:20px}
+ .reading-mode :is(#golivescore,#jobhunt).project-refined .project-lede{max-width:70ch}
+ .reading-mode #skills.engineering-toolkit .skill-atlas{grid-template-columns:180px minmax(0,1fr);grid-template-rows:max-content 1fr;grid-template-areas:"heading heading" "filters board";gap:18px 24px}
+ .reading-mode #skills.engineering-toolkit .toolkit-heading h2{font-size:clamp(36px,3.25vw,46px);max-width:none;margin:0 0 12px}
+ .reading-mode #skills.engineering-toolkit .toolkit-heading p{font-size:15px;line-height:1.65;max-width:none}
+ .reading-mode #skills.engineering-toolkit .atlas-filters{max-width:none}
+ .reading-mode #skills.engineering-toolkit .atlas-filters button{min-height:40px;padding:8px 10px 8px 12px;font-size:12px}
+ .reading-mode #skills.engineering-toolkit .atlas-board{padding-top:0}
+ .reading-mode #skills.engineering-toolkit .atlas-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+ .reading-mode #skills.engineering-toolkit .skill-element{display:grid;grid-template-columns:26px minmax(0,1fr);grid-template-rows:auto auto;column-gap:9px;align-content:center;align-items:center;min-height:72px;margin:0;padding:10px 9px;border-radius:10px}
+ .reading-mode #skills.engineering-toolkit .skill-element .toolkit-icon{grid-row:1/3;width:26px;height:26px;margin:0}
+ .reading-mode #skills.engineering-toolkit .toolkit-icon img,.reading-mode #skills.engineering-toolkit .toolkit-icon svg{width:26px;height:26px}
+ .reading-mode #skills.engineering-toolkit .skill-element .toolkit-name{font-size:12px;line-height:1.35;margin:0;overflow-wrap:anywhere}
+ .reading-mode #skills.engineering-toolkit .skill-element .toolkit-context{font-size:10px;line-height:1.4;margin-top:4px;overflow-wrap:anywhere}
+ .reading-mode #skills.engineering-toolkit .atlas-status{margin-top:10px!important;font-size:10px!important}
+}
+
+/* Reading lab: shaded black glass, with a consistent native-select fallback. */
+.reading-mode #engineering .demo{background:linear-gradient(135deg,#ffffff09,#ffffff02),#050708a8;border:1px solid #e9f2fa35;box-shadow:inset 0 1px 0 #ffffff12,0 18px 48px #0003;backdrop-filter:blur(18px) saturate(110%);-webkit-backdrop-filter:blur(18px) saturate(110%)}
+.reading-mode #engineering .demo-top{color:#e0e7e4}
+.reading-mode #engineering .demo-tag{color:#aab8b2}
+/* Never transition inherited visibility: the complete Lab must leave with its chapter. */
+.reading-mode #engineering .node{background:linear-gradient(135deg,#f5f9fb0e,#f5f9fb03),#090d0e7a;border:1px solid #e9f2fa38;box-shadow:inset 0 1px 0 #ffffff12,0 5px 16px #0002;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:background-color .25s,border-color .25s,box-shadow .25s}
+.reading-mode #engineering .node span,.reading-mode #engineering .node small{color:#acbab5}
+.reading-mode #engineering .node b{color:#eef4f0}
+.reading-mode #engineering .node.active{background:linear-gradient(135deg,#d6f0e11c,#d6f0e108),#101916b3;border-color:#c2d9ca9c;box-shadow:inset 0 1px 0 #ffffff20,0 0 22px #c2d9ca12}
+.reading-mode #engineering .node.error{border-color:#e1a5ab;background:linear-gradient(135deg,#e1a5ab12,#e1a5ab04),#181013b3}
+.reading-mode #engineering .nodes>i{color:#839b8d}
+.reading-mode #engineering .demo label,.reading-mode #engineering .scenario-label{color:#b9c6bf;font-size:11px}
+.reading-mode #engineering #demo-status{color:#b9c9c0}
+.reading-mode #engineering #run{min-height:44px;background:#dfe9e2;color:#17241c}
+.reading-mode #engineering #scenario{min-height:44px;padding:10px 34px 10px 12px;border:1px solid #e9f2fa52;border-radius:12px;background:#151e1be6;color:#f0f5f1;font-size:12px}
+.reading-scenario-picker{display:none}
+.reading-mode #engineering .reading-scenario-picker{display:block;position:relative;margin-top:5px}
+.reading-mode #engineering #scenario[data-reading-enhanced]{display:none}
+.reading-mode #engineering .reading-scenario-trigger{display:flex;align-items:center;gap:16px;width:240px;max-width:100%;min-height:44px;padding:10px 12px;border:1px solid #e9f2fa52;border-radius:12px;background:linear-gradient(135deg,#f5f9fb17,#f5f9fb03),#e8eff31c;box-shadow:inset 0 1px 0 #ffffff20,0 5px 18px #00000014;backdrop-filter:blur(14px) saturate(115%);-webkit-backdrop-filter:blur(14px) saturate(115%);color:#f6f8fa;text-align:left;font:500 12px/1.4 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.reading-mode #engineering .reading-scenario-trigger:disabled{opacity:.55;cursor:wait;border-color:#e9f2fa35;background:linear-gradient(135deg,#f5f9fb0b,#f5f9fb03),#111916b3}
+.reading-scenario-current{flex:1}
+.reading-scenario-chevron{width:15px;height:15px;flex:none;transition:transform .2s}
+.reading-scenario-chevron svg{display:block;width:100%;height:100%}
+.reading-scenario-trigger[aria-expanded=true] .reading-scenario-chevron{transform:rotate(180deg)}
+.reading-mode #engineering .reading-scenario-trigger[aria-expanded=true],.reading-mode #engineering .reading-scenario-trigger:hover{background:linear-gradient(135deg,#f5f9fb25,#f5f9fb09),#e8eff32c;border-color:#f0f5f9a0}
+.reading-scenario-panel{position:fixed;inset:auto;margin:0;padding:7px;width:270px;max-width:calc(100vw - 24px);border:1px solid #f0f5f966;border-radius:16px;background:linear-gradient(135deg,#f5f9fb14,#f5f9fb04),#17211ddb;box-shadow:inset 0 1px 0 #ffffff24,0 18px 55px #0005;color:#f2f6f8;backdrop-filter:blur(24px) saturate(115%);-webkit-backdrop-filter:blur(24px) saturate(115%);overflow-y:auto;overscroll-behavior:contain}
+.reading-scenario-panel::backdrop{background:transparent}
+.reading-scenario-item{display:flex;align-items:center;gap:14px;width:100%;min-height:44px;margin:0;padding:10px 11px;border:1px solid transparent;border-radius:9px;background:transparent;color:#dde7ed;text-align:left;font:400 12px/1.45 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.reading-scenario-item[aria-checked=true]{background:#f3f8fc13;border-color:#f3f8fc30;color:#fff}
+.reading-scenario-check{margin-left:auto;opacity:0}
+.reading-scenario-item[aria-checked=true] .reading-scenario-check{opacity:1}
+.reading-scenario-item:hover{background:#f3f8fc13;color:#fff}
+.reading-scenario-item:focus-visible{outline:2px solid #fff;outline-offset:-2px;background:#f3f8fc18}
+.reading-mode #engineering .reading-scenario-trigger:focus-visible{outline:2px solid #fff;outline-offset:4px}
+@media(max-width:440px){.reading-mode #engineering .demo-controls{flex-wrap:wrap;align-items:flex-start}.reading-mode #engineering .reading-scenario-trigger{width:220px}.reading-mode #engineering #run{margin-left:auto}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.reading-mode #engineering .demo,.reading-mode #engineering .node{background:#101614}.reading-scenario-panel{background:#25332b}}
+@media(prefers-reduced-transparency:reduce){.reading-mode #engineering .demo,.reading-mode #engineering .node{background:#101614;backdrop-filter:none;-webkit-backdrop-filter:none}.reading-scenario-panel{background:#25332b;backdrop-filter:none;-webkit-backdrop-filter:none}.reading-mode #engineering .reading-scenario-trigger{background:#34423b;backdrop-filter:none;-webkit-backdrop-filter:none}}
+@media(prefers-reduced-motion:reduce){.reading-mode #engineering .node,.reading-scenario-chevron{transition:none}}
+@media(min-width:1200px) and (pointer:fine){.reading-mode #skills.engineering-toolkit .atlas-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+
+
+/* Fit the desktop Lab by tightening space, not shrinking text or controls.
+   Keep this independent of pinned mode so measured document fallback is stable. */
+@media(min-width:1025px) and (pointer:fine){
+ .reading-mode #engineering .reading-chapter{margin-bottom:16px}
+ .reading-mode #engineering .section-heading{gap:24px;margin-bottom:20px}
+ .reading-mode #engineering .section-heading h2{margin-bottom:0}
+ .reading-mode #engineering .demo{padding:20px}
+ .reading-mode #engineering .nodes{gap:12px;margin:20px 0}
+ .reading-mode #engineering .node{padding:16px}
+ .reading-mode #engineering .node b{margin-top:8px}
+ .reading-mode #engineering #demo-status{margin-top:16px}
+ .reading-mode #engineering .reading-next-chapter{margin-top:16px}
+}

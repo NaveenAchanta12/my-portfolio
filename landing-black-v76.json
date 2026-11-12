@@ -1,0 +1,12 @@
+[
+  {
+    "before": "<link rel=\"stylesheet\" href=\"reading-experience.css\"></head>",
+    "after": "<link rel=\"stylesheet\" href=\"reading-experience.css\"><link rel=\"stylesheet\" href=\"landing-black.css\"></head>",
+    "count": 1
+  },
+  {
+    "before": "<div class=\"hero-name\" aria-hidden=\"true\">NAVEEN<br><span>ACHANTA</span></div>",
+    "after": "<div class=\"hero-name\" aria-hidden=\"true\"><span class=\"hero-name__line\">NAVEEN</span><br><span class=\"hero-name__line\">ACH<span class=\"hero-name__light\">ANTA</span></span></div>",
+    "count": 1
+  }
+]

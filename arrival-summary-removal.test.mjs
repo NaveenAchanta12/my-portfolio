@@ -1,0 +1,17 @@
+import {createRequire} from 'node:module';
+const {applyCopyChanges}=createRequire(import.meta.url)('./copy-cleanup-v75.cjs');
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {execFileSync} from 'node:child_process';
+const baseline='c09958284eefc4c8eac9dbb43a18d567c3b4b762';
+const paragraph='<p class="arrival-summary">I’m Naveen, a software engineer building enterprise applications, connected systems and independent products.</p>';
+const old=execFileSync('git',['show',`${baseline}:index.html`],{encoding:'utf8'});
+assert.equal(old.split(paragraph).length-1,1,'Exactly one matching paragraph in the City arrival template');
+const html=fs.readFileSync('index.html','utf8');
+assert.equal(html,applyCopyChanges(old.replace(paragraph,'').replace('<script src="reading-experience.js" defer></script>','<script src="reading-experience.js" defer></script>\n<script src="reading-demo.js" defer></script>')),'Only requested paragraph removal, Reading demo script and V75 copy/order changes affect HTML');
+assert.equal(html,fs.readFileSync('dist/index.html','utf8'),'Source and deployment match');
+assert(!html.includes('class="arrival-summary"'));
+const prod=execFileSync('git',['ls-tree','-r','--name-only',baseline,'dist'],{encoding:'utf8'}).trim().split('\n');
+const requestedReadingChanges=new Set(['dist/reading-experience.js','dist/reading-experience.css','dist/city-controller.js','dist/scroll-pacing.js','dist/showcase-layout.css','dist/chapter-refinement.css']);
+for(const f of prod)if(f!=='dist/index.html'&&!requestedReadingChanges.has(f))assert(fs.readFileSync(f).equals(execFileSync('git',['show',`${baseline}:${f}`],{maxBuffer:50*1024*1024})),`V70 production bytes unchanged except requested Reading refinements: ${f}`);
+console.log('PASS the exact City arrival paragraph remains removed; all other production files except the requested Reading refinements, Skills menu layout and Contact timing stay unchanged from V70');

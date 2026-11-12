@@ -1,0 +1,41 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+const read=name=>readFileSync(new URL(name,import.meta.url),'utf8');
+const html=read('index.html'),css=read('experience-timeline.css');
+const timelines=[...html.matchAll(/<ol class="experience-timeline"[^>]*>(.*?)<\/ol>/gs)].map(m=>m[1]);
+assert.equal(timelines.length,2,'City and reading mode both have the timeline');
+assert.equal(timelines[0],timelines[1],'Both views retain the same content');
+const roles=[...timelines[0].matchAll(/<article class="employment"[^>]*>(.*?)<\/article>/gs)].map(m=>m[1]);
+assert.equal(roles.length,2);
+for(const [i,role] of roles.entries()){
+ assert.match(role,new RegExp('<h3>'+['Deloitte','Prudential'][i]+'</h3>'));
+ assert.match(role,new RegExp('<p class="experience-role">'+['Senior Software Engineer','Software Engineer'][i]+'</p>'));
+ const dates=[...role.matchAll(/<time datetime="([^"]+)">([^<]+)<\/time>/g)].map(m=>[m[1],m[2]]);
+ assert.deepEqual(dates,i===0?[['2023-12','Dec 2023']]:[['2020-11','Nov 2020'],['2021-12','Dec 2021']]);
+ if(i===0) assert.match(role,/<span>Present<\/span>/);
+ const duties=role.match(/<details class="city-detail"><summary>My responsibilities<\/summary>(?:<p[^>]*>.*?<\/p>)?<ul>(.*?)<\/ul>/s)[1];
+ assert.equal((duties.match(/<li>/g)||[]).length,[10,8][i],'Portfolio responsibilities remain concise and complete');
+ const tools=role.match(/<div class="verified-tools">(.*?)<\/div>/s)[1];
+ const chipHtml=role.match(/<ul class="experience-stack"[^>]*>(.*?)<\/ul>/s)[1];
+ const chips=[...chipHtml.matchAll(/<li>(.*?)<\/li>/g)].map(m=>m[1]);
+ assert.equal(chips.length,i===0?7:6);
+ if(i===0)assert(chips.includes('Kubernetes'),'The requested Deloitte Kubernetes chip is present');
+ for(const chip of chips) assert(tools.includes('>'+chip+'</span>'),'Every highlighted technology is present in the verified role toolkit: '+chip);
+ if(i===1) assert(!chips.includes('Azure'),'No unverified Prudential cloud claim copied from the reference');
+}
+assert.match(html,/<section id="experience"[^>]*>[\s\S]*?<\/ol><\/section><section id="codetrail"/,'Experience closes before the next reading section');
+assert.match(css,/\.experience-timeline:before/);assert.match(css,/\.experience-entry:before/);
+assert.match(css,/summary:focus-visible/);assert.match(css,/@media\(max-width:760px\)/);
+assert.match(css,/@media\(max-width:370px\)/);assert.match(css,/max-height:550px/);
+assert(!/animation:|@keyframes/.test(css),'The timeline adds no new animation');
+assert.equal(html,read('dist/index.html'));assert.equal(css,read('dist/experience-timeline.css'));
+console.log('PASS: identical city/reading timelines, truthful roles/dates, 18 portfolio-aligned duties, verified chips, reading section boundaries, keyboard styling, responsive rules, source/dist parity.');
+
+assert.match(css,/background:transparent!important/,'Experience remains borderless over the city');
+assert.match(css,/backdrop-filter:none!important/,'The city stays sharp rather than blurred');
+assert.match(css,/data-station="experience".*?opacity:\.44/,'Experience uses a subtle neutral city scrim');
+assert(!/#(?:e7cfa6|dbc7a3|decaa2|13212b|111b25)/i.test(css),'No yellow accents or blue card background');
+const controller=read('city-controller.js');
+assert.match(controller,/createArrivalIdentity/,'Timeline update retains Arrival-to-header identity');
+assert.match(html,/arrival-identity-title/,'Arrival name and title survive Experience edits');
+console.log('PASS: transparent neutral Experience styling and identity coexistence guard.');
