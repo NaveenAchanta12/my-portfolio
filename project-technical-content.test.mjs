@@ -3,7 +3,7 @@ import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 const read=f=>readFileSync(f,'utf8'),html=read('index.html');
 const hash=s=>createHash('sha256').update(s).digest('hex');
-const originalStacks={"codetrail": "8858816a55bf70d782b1b0b9382283916c15e7c3e044734ae94d96357856a57d", "lumicare": "0e3d74837335e323e07b9f5160318ffc1dc84ce0c3672b96d5f6d9d47af0f7d7", "golivescore": "b694a5f07043ae04e4385c058d8bd54dc86db5b3d20a3976c603f0fce88f0a46", "wishlist": "06117e6a455a1f141ca7a8b88ba2397fad72e433e4faff7725a82aeb061744b8", "jobhunt": "dbb92810bb9cae9059fadb333ff90c61850b473f97388ee40ea2512fa4f3e25d"};
+const originalStacks={"codetrail": "f2e6f2848efe7f0e0014d30b63c262ab59d12c0bf6eddca98539ec7b3d95d98e", "lumicare": "0e3d74837335e323e07b9f5160318ffc1dc84ce0c3672b96d5f6d9d47af0f7d7", "golivescore": "b694a5f07043ae04e4385c058d8bd54dc86db5b3d20a3976c603f0fce88f0a46", "wishlist": "06117e6a455a1f141ca7a8b88ba2397fad72e433e4faff7725a82aeb061744b8", "jobhunt": "dbb92810bb9cae9059fadb333ff90c61850b473f97388ee40ea2512fa4f3e25d"};
 const counts={codetrail:8,lumicare:7,golivescore:8,wishlist:8,jobhunt:9};
 for(const[id,count]of Object.entries(counts)){
  const reading=html.match(new RegExp('<section id="'+id+'".*?</section>','s'))[0];
@@ -17,8 +17,8 @@ for(const[id,count]of Object.entries(counts)){
  assert(!/\d+%|million users|production.scale|fully autonomous|end.to.end success/i.test(reading),'No fabricated impact or completion claims: '+id);
 }
 const code=html.match(/<section id="codetrail".*?<\/section>/s)[0];
-assert.match(code,/In an earlier CodeTrail implementation/);assert.match(code,/browser-based learning with an on-device coding tutor/);
-assert.match(code,/Java learning path uses editing and code downloads/);assert.match(code,/Optional account-backed chat memory is separate from local inference/);
+assert.match(code,/vanilla JavaScript interface with Cloudflare Workers/);assert.match(code,/OpenAI Responses API/);
+assert.match(code,/Java learning path uses editing and code downloads/);assert.match(code,/Optional WebLLM inference remains a separate browser-based capability/);
 const lumi=html.match(/<section id="lumicare".*?<\/section>/s)[0];
 assert.match(lumi,/per-message request\/response flow from React through Express to OpenAI/);assert.match(lumi,/browser-local contents/);
 assert(!/payment processing|order fulfillment|multi-turn memory/i.test(lumi));
