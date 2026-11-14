@@ -23,10 +23,10 @@ for (const pattern of [/<section id="jobhunt".*?<\/section>/s, /<article[^>]*dat
   assert(job.includes('built the core architecture'), 'Completion claims remain limited to core architecture');
   assert(!job.includes('project-actions'), 'No empty or fabricated JobHunt links');
 }
-assert(html.includes('CodeTrail · Earlier on-device tutor implementation'), 'Historical implementation identity is retained');
-assert(html.includes('SWOT &amp; Study · Original application'), 'Original application identity is retained');
+assert(html.includes('CodeTrail / SWOT &amp; Study · AI-assisted learning'), 'Current product identity is retained');
+assert(!html.includes('SWOT &amp; Study · Original application'), 'Contradictory duplicate identity is removed');
 assert(section('lumicare').includes('per-message request/response flow'), 'Amaya is not presented as a multi-turn memory system');
-assert(section('codetrail').includes('Optional account-backed chat memory is separate from local inference'), 'Local inference does not imply all data stays local');
+assert(section('codetrail').includes('OpenAI Responses API'), 'Server-side model integration is explicit');
 assert.equal((html.match(/I design and support enterprise distributed applications across services, data and user interfaces\./g) || []).length, 2);
 assert.equal(html, fs.readFileSync('dist/index.html', 'utf8'));
 console.log('PASS concise portfolio copy, truthful implementation identities, visible ongoing JobHunt bio, available links only, static Lab before Contact, retained simulation and source/dist parity');
